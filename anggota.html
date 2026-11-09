@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anggota - Keyto Perpustakaan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/anggota.css">
+    <link rel="stylesheet" href="css/notifikasi.css">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <i data-lucide="book-open"></i>
+            Keyto Perpustakaan
+        </div>
+        <span class="badge">ADMIN WORKSPACE</span>
+
+        <nav class="menu">
+            <a href="index.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+            <a href="anggota.html" class="active"><i data-lucide="users"></i>Anggota</a>
+            <a href="buku.html"><i data-lucide="book-open"></i>Buku</a>
+            <a href="#"><i data-lucide="arrow-left-right"></i>Peminjaman</a>
+            <a href="#"><i data-lucide="footprints"></i>Pengunjung</a>
+            <a href="laporan.html"><i data-lucide="chart-no-axes-combined"></i>Laporan</a>
+            <a href="pengaturan.html"><i data-lucide="settings"></i>Pengaturan</a> 
+            <a href="#"><i data-lucide="log-out"></i>Logout</a>        
+        </nav>
+    </aside>
+
+    <div class="main">
+
+        <header class="topbar">
+            <span class="crumb">Workspace / Anggota</span>
+
+            <div class="user">
+                <div class="notif">
+
+                    <button type="button" class="bell" id="bellBtn" aria-label="Notifikasi">
+                        <i data-lucide="bell"></i>
+                        <span class="bell-dot" id="bellDot"></span>
+                    </button>
+
+                    <div class="notif-panel" id="notifPanel">
+
+                        <div class="notif-head">
+                            <div>
+                                <h3>Notifikasi</h3>
+                                <p id="notifCount">3 belum dibaca</p>
+                            </div>
+                            <button type="button" class="btn-outline" id="markAll">Tandai Semua Dibaca</button>
+                        </div>
+
+                        <div class="notif-list">
+
+                            <a href="#" class="notif-item unread">
+                                <span class="notif-icon blue"><i data-lucide="book-open"></i></span>
+                                <div class="notif-text">
+                                    <b>Buku dikembalikan</b>
+                                    <small>Pengembalian &bull; The Creative Act sudah kembali ke rak.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>2 menit lalu</span>
+                                    <i class="notif-dot"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item unread">
+                                <span class="notif-icon blue"><i data-lucide="clock"></i></span>
+                                <div class="notif-text">
+                                    <b>Peminjaman hampir jatuh tempo</b>
+                                    <small>Segera jatuh tempo &bull; Sapiens jatuh tempo besok.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>1 jam lalu</span>
+                                    <i class="notif-dot"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item unread">
+                                <span class="notif-icon blue"><i data-lucide="user-plus"></i></span>
+                                <div class="notif-text">
+                                    <b>Anggota baru terdaftar</b>
+                                    <small>Anggota &bull; Amara Okafor bergabung di perpustakaan.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>3 jam lalu</span>
+                                    <i class="notif-dot"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item">
+                                <span class="notif-icon gray"><i data-lucide="footprints"></i></span>
+                                <div class="notif-text">
+                                    <b>Pengunjung check-in</b>
+                                    <small>Pengunjung &bull; Oliver James check-in.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>Kemarin</span>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item">
+                                <span class="notif-icon red"><i data-lucide="circle-alert"></i></span>
+                                <div class="notif-text">
+                                    <b>Buku terlambat</b>
+                                    <small>Terlambat &bull; A Little Life perlu diingatkan.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>Kemarin</span>
+                                </div>
+                            </a>
+
+                        </div>
+
+                        <a href="#" class="notif-foot">Lihat Semua Notifikasi <i data-lucide="arrow-right"></i></a>
+
+                    </div>
+                </div>
+
+                <div class="avatar">MP</div>
+                <div class="user-info">
+                    <strong>Maya Putri</strong>
+                    <span>Admin</span>
+                </div>
+            </div>
+        </header>
+        
+        <main class="content">
+            <div class="page-head">
+                <div>
+                    <h1>Rumah Terbaik Bagi Pikiran Yang Penasaran.</h1>
+                    <p>Satu kunjungan ke perpustakaan adalah satu langkah lebih dekat menuju dirimu yang bijaksana.</p>
+                </div>
+                <button type="button" class="btn-primary" id="openModal">
+                    <i data-lucide="user-plus"></i>
+                    Tambah Anggota
+                </button>
+            </div>
+            <section class="stats stats-3">
+
+                <div class="card stat">
+                    <div class="stat-top">
+                        <span>Anggota terdaftar</span>
+                        <i data-lucide="users"></i>
+                    </div>
+                    <div class="stat-number">1,248</div>
+                    <div class="stat-note note-dark">Semua keanggotaan</div>
+                </div>
+
+                <div class="card stat">
+                    <div class="stat-top">
+                        <span>Anggota aktif</span>
+                        <i data-lucide="circle-check"></i>
+                    </div>
+                    <div class="stat-number">1,286</div>
+                    <div class="stat-note note-dark">+24 bulan ini</div>
+                </div>
+
+                <div class="card stat">
+                    <div class="stat-top">
+                        <span>Ditangguhkan</span>
+                        <i data-lucide="user-x"></i>
+                    </div>
+                    <div class="stat-number">38</div>
+                    <div class="stat-note note-dark">Tinjau status keanggotaan</div>
+                </div>
+
+            </section>
+
+            <form class="toolbar" method="GET" action="anggota.html">
+
+                <div class="search">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="searchInput" name="q" placeholder="Cari nama, email, atau ID Anggota">
+                </div>
+
+                <select class="select" id="statusFilter" name="status" onchange="this.form.submit()">
+                    <option value="all">Semua status</option>
+                    <option value="active">Aktif</option>
+                    <option value="suspended">Ditangguhkan</option>
+                </select>
+
+                <select class="select" id="sortFilter">
+                    <option value="recent">Terakhir berkunjung</option>
+                    <option value="name">Nama A-Z</option>
+                    <option value="borrowed">Paling banyak pinjam</option>
+                </select>
+
+                <button class="btn-outline">
+                    <i data-lucide="download"></i>
+                    Ekspor
+                </button>
+            </form>
+
+            <h2 class="section-title">Direktori anggota</h2>
+            <p class="section-sub">Total pinjaman dan kunjungan: 01-05 Okt 2026 &bull; Diurutkan berdasarkan aktivitas terbaru</p>
+
+            <div class="card table-wrap">
+                <table class="member-table">
+                    <thead>
+                        <tr>
+                            <th>ID ANGGOTA</th>
+                            <th>NAMA</th>
+                            <th>EMAIL</th>
+                            <th>TOTAL PINJAM</th>
+                            <th>TOTAL KUNJUNGAN</th>
+                            <th>KUNJUNGAN TERAKHIR</th>
+                            <th>STATUS</th>
+                            <th>AKSI</th>
+                        </tr>
+                    </thead>
+                    <tbody id="memberBody">
+                        <tr>
+                            <td class="muted">MB-0108</td>
+                            <td><div class="person"><span class="av-lg">MC </span><b>Maya Chen</b></div></td>
+                            <td class="muted">maya.chen@email.com</td>
+                            <td>6</td>
+                            <td>12</td>
+                            <td>05 Okt 2026</td>
+                            <td><span class="status status-active">Aktif</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
+                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="muted">MB-0214</td>
+                            <td><div class="person"><span class="av-lg">DB </span><b>Daniel Brooks</b></div></td>
+                            <td class="muted">daniel.b@email.com</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>05 Okt 2026</td>
+                            <td><span class="status status-active">Aktif</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
+                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="muted">MB-0326</td>
+                            <td><div class="person"><span class="av-lg">SM </span><b>Sofia Martinez</b></div></td>
+                            <td class="muted">sofia.m@email.com</td>
+                            <td>4</td>
+                            <td>9</td>
+                            <td>05 Okt 2026</td>
+                            <td><span class="status status-active">Aktif</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
+                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="muted">MB-0412</td>
+                            <td><div class="person"><span class="av-lg">OJ </span><b>Oliver James</b></div></td>
+                            <td class="muted">oliver.j@email.com</td>
+                            <td>4</td>
+                            <td>8</td>
+                            <td>04 Okt 2026</td>
+                            <td><span class="status status-active">Aktif</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
+                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="muted">MB-0538</td>
+                            <td><div class="person"><span class="av-lg">AO </span><b>Amara Okafor</b></div></td>
+                            <td class="muted">amara.o@email.com</td>
+                            <td>3</td>
+                            <td>7</td>
+                            <td>04 Okt 2026</td>
+                            <td><span class="status status-active">Aktif</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
+                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="muted">MB-0619</td>
+                            <td><div class="person"><span class="av-lg">NW </span><b>Noah Wilson</b></div></td>
+                            <td class="muted">noah.w@email.com</td>
+                            <td>2</td>
+                            <td>4</td>
+                            <td>02 Okt 2026</td>
+                            <td><span class="status status-suspended">Ditangguhkan</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
+                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="muted">MB-0721</td>
+                            <td><div class="person"><span class="av-lg">IT </span><b>Isla Thompson</b></div></td>
+                            <td class="muted">isla.t@email.com</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>01 Okt 2026</td>
+                            <td><span class="status status-active">Aktif</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
+                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="muted">MB-0845</td>
+                            <td><div class="person"><span class="av-lg">LA </span><b>Leo Anderson</b></div></td>
+                            <td class="muted">leo.a@email.com</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>01 Okt 2026</td>
+                            <td><span class="status status-active">Aktif</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
+                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                </div>
+                            </td>
+                        </tr>     
+                    </tbody>
+                </table>
+
+                <div class="table-foot">
+                    <span class="muted">Menampilkan 1-8 dari 1,286 anggota &bull; 8 anggota per halaman</span>
+                    <div class="pager">
+                        <button class="btn-outline">Sebelumnya</button>
+                        <span class="pill">1 / 161</span>
+                        <button class="btn-outline">Berikutnya</button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="charts info-cards">
+
+                <div class="card">
+                    <h3>Keanggotaan, dibuat sederhana</h3>
+                    <p class="meta">Aturan yang jelas mendukung seluruh komunitas untuk terus membaca.</p>
+
+                    <div class="info-body">
+                        <i data-lucide="book-open"></i>
+                        <p>Maksimal 5 buku sekaligus &bull; Masa pinjam 14 hari &bull; Satu perpanjangan jika tidak ada antrean reservasi.</p>
+                    </div>
+                    
+                    <a href="#" class="link link-dark">Kelola kebijakan keanggotaan <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="card">
+                    <h3>Pengingat yang ramah sangat berarti</h3>
+                    <p class="meta">18 pinjaman terlambat perlu ditangani hari ini.</p>
+
+                    <div class="info-body">
+                        <i data-lucide="mail"></i>
+                        <p>Kirim pengingat pengembalian yang ramah agar pembaca lain dapat menemukan bacaan berikutnya.</p>
+                    </div>
+
+                    <a href="#" class="link link-dark">Tinjau peminjaman terlambat <i data-lucide="arrow-right"></i></a>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <span>&copy; 2026 Keyto Perpustakaan</span>
+                <span>Bantuan &amp; dukungan</span>
+            </footer>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="memberModal">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <form method="POST" action="#">
+
+                <div class="modal-head">
+                    <div class="modal-icon"><i data-lucide="book-plus"></i></div>
+                    <div class="modal-title">
+                        <h2 id="modalTitle">Tambah Anggota</h2>
+                        <p>Daftarkan anggota baru ke Perpustakaan Keyto.</p>
+                    </div>
+                    <button type="button" class="modal-close" id="closeModal" aria-label="Tutup">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="field">
+                        <label for="nama">Nama lengkap</label>
+                        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email / Nama pengguna</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="password">Kata sandi</label>
+                            <div class="pw">
+                                <input type="password" id="password" name="password" placeholder="Buat kata sandi" minlength="8" required>
+                                <button type="button" class="toggle-pw" aria-label="Tampilkan kata sandi">
+                                    <i data-lucide="eye-off"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="password2">Konfirmasi kata sandi</label>
+                            <div class="pw">
+                                <input type="password" id="password2" name="password_confirmation" placeholder="Ulangi kata sandi" minlength="8" required>
+                                <button type="button" class="toggle-pw" aria-label="Tampilkan kata sandi">
+                                    <i data-lucide="eye-off"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="idAnggota">ID anggota</label>
+                            <input type="text" id="idAnggota" value="Dibuat otomatis" readonly class="readonly">
+                        </div>
+
+                        <div class="field">
+                            <label for="statusAnggota">Status keanggotaan</label>
+                            <select id="statusAnggota" name="status">
+                                <option value="active">Aktif</option>
+                                <option value="suspended">Ditangguhkan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="hint">
+                        <i data-lucide="info"></i>
+                        <p>Gunakan minimal 8 karakter, termasuk angka. Anggota aktif dapat langsung meminjam buku.</p>
+                    </div>
+
+                </div>
+
+                <div class="modal-foot">
+                    <button type="button" class="btn-outline" id="cancelModal">Batal</button>
+                    <button type="submit" class="btn-primary">
+                        <i data-lucide="user-plus"></i>
+                        Tambah Anggota
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <script src="js/anggota.js"></script>
+    <script src="js/notifikasi.js"></script>
+</body>
+</html>

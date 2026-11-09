@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Buku - Keyto Perpustakaan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/anggota.css">
+    <link rel="stylesheet" href="css/buku.css">
+    <link rel="stylesheet" href="css/notifikasi.css">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <i data-lucide="book-open"></i>
+            Keyto Perpustakaan
+        </div>
+        <span class="badge">ADMIN WORKSPACE</span>
+
+        <nav class="menu">
+            <a href="index.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+            <a href="anggota.html"><i data-lucide="users"></i>Anggota</a>
+            <a href="buku.html" class="active"><i data-lucide="book-open"></i>Buku</a>
+            <a href="#"><i data-lucide="arrow-left-right"></i>Peminjaman</a>
+            <a href="#"><i data-lucide="footprints"></i>Pengunjung</a>
+            <a href="laporan.html"><i data-lucide="chart-no-axes-combined"></i>Laporan</a>
+            <a href="pengaturan.html"><i data-lucide="settings"></i>Pengaturan</a>
+            <a href="#"><i data-lucide="log-out"></i>Logout</a>
+        </nav>
+    </aside>
+
+    <div class="main">
+
+        <header class="topbar">
+            <span class="crumb">Workspace / Buku</span>
+
+            <div class="user">
+                <div class="notif">
+
+                    <button type="button" class="bell" id="bellBtn" aria-label="Notifikasi">
+                        <i data-lucide="bell"></i>
+                        <span class="bell-dot" id="bellDot"></span>
+                    </button>
+
+                    <div class="notif-panel" id="notifPanel">
+
+                        <div class="notif-head">
+                            <div>
+                                <h3>Notifikasi</h3>
+                                <p id="notifCount">3 belum dibaca</p>
+                            </div>
+                            <button type="button" class="btn-outline" id="markAll">Tandai Semua Dibaca</button>
+                        </div>
+
+                        <div class="notif-list">
+
+                            <a href="#" class="notif-item unread">
+                                <span class="notif-icon blue"><i data-lucide="book-open"></i></span>
+                                <div class="notif-text">
+                                    <b>Buku dikembalikan</b>
+                                    <small>Pengembalian &bull; The Creative Act sudah kembali ke rak.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>2 menit lalu</span>
+                                    <i class="notif-dot"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item unread">
+                                <span class="notif-icon blue"><i data-lucide="clock"></i></span>
+                                <div class="notif-text">
+                                    <b>Peminjaman hampir jatuh tempo</b>
+                                    <small>Segera jatuh tempo &bull; Sapiens jatuh tempo besok.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>1 jam lalu</span>
+                                    <i class="notif-dot"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item unread">
+                                <span class="notif-icon blue"><i data-lucide="user-plus"></i></span>
+                                <div class="notif-text">
+                                    <b>Anggota baru terdaftar</b>
+                                    <small>Anggota &bull; Amara Okafor bergabung di perpustakaan.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>3 jam lalu</span>
+                                    <i class="notif-dot"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item">
+                                <span class="notif-icon gray"><i data-lucide="footprints"></i></span>
+                                <div class="notif-text">
+                                    <b>Pengunjung check-in</b>
+                                    <small>Pengunjung &bull; Oliver James check-in.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>Kemarin</span>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item">
+                                <span class="notif-icon red"><i data-lucide="circle-alert"></i></span>
+                                <div class="notif-text">
+                                    <b>Buku terlambat</b>
+                                    <small>Terlambat &bull; A Little Life perlu diingatkan.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>Kemarin</span>
+                                </div>
+                            </a>
+
+                        </div>
+
+                        <a href="#" class="notif-foot">Lihat Semua Notifikasi <i data-lucide="arrow-right"></i></a>
+
+                    </div>
+                </div>
+
+                <div class="avatar">MP</div>
+                <div class="user-info">
+                    <strong>Maya Putri</strong>
+                    <span>Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+
+            <div class="page-head">
+                <div>
+                    <h1>Tempat Sunyi Yang Penuh Dengan Cerita Paling Bising.</h1>
+                    <p>Perpustakaan bukan sekadar gudang buku, melainkan tempat penitipan pikiran manusia yang paling berharga.</p>
+                </div>
+                <button type="button" class="btn-primary" id="openAddBook">
+                    <i data-lucide="plus"></i>
+                    Tambah Buku
+                </button>
+            </div>
+
+            <section class="stats stats-3">
+
+                <div class="card stat">
+                    <div class="stat-top">
+                        <span>Judul Unik</span>
+                        <i data-lucide="library"></i>
+                    </div>
+                    <div class="stat-number">1,248</div>
+                    <div class="stat-note note-dark">Dari 24 kategori</div>
+                </div>
+
+                <div class="card stat">
+                    <div class="stat-top">
+                        <span>Golongan tersedia</span>
+                        <i data-lucide="book-check"></i>
+                    </div>
+                    <div class="stat-number">9,340</div>
+                    <div class="stat-note note-dark">Dari 12,480 total golongan</div>
+                </div>
+
+                <div class="card stat">
+                    <div class="stat-top">
+                        <span>Golongan dipinjam</span>
+                        <i data-lucide="arrow-left-right"></i>
+                    </div>
+                    <div class="stat-number">2,860</div>
+                    <div class="stat-note note-dark">280 dalam perawatan</div>
+                </div>
+            </section>
+
+            <form class="toolbar" method="GET" action="buku.html">
+
+                <div class="search">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="searchBook" name="q" placeholder="Cari judul, penulis, atau ID buku">
+                </div>
+
+                <select class="select" id="categoryFilter" name="category" onchange="this.form.submit()">
+                    <option value="all">Semua kategori</option>
+                    <option value="fiction">Fiksi</option>
+                    <option value="arts">Seni</option>
+                    <option value="self-growth">Pengembangan diri</option>
+                    <option value="history">Sejarah</option>
+                    <option value="nature">Alam</option>
+                    <option value="design">Desain</option>
+                </select>
+
+                <select class="select" id="bookStatusFilter" name="status" onchange="this.form.submit()">
+                    <option value="all">Semua status</option>
+                    <option value="available">Tersedia</option>
+                    <option value="on-loan">Dipinjam</option>
+                    <option value="maintenance">Perawatan</option>
+                </select>
+
+                <button type="button" class="btn-outline">
+                    <i data-lucide="download"></i>
+                    Ekspor
+                </button>
+            </form>
+
+            <div class="section-row">
+                <h2 class="section-title">Katalog buku</h2>
+                <span class="muted">8 dari 1,248 judul</span>
+            </div>
+
+            <div class="card table-wrap">
+                <table class="member-table book-table">
+                    <thead>
+                        <tr>
+                            <th>ID BUKU</th>
+                            <th>JUDUL BUKU</th>
+                            <th>PENULIS</th>
+                            <th>KATEGORI</th>
+                            <th>STOK</th>
+                            <th>TERSEDIA</th>
+                            <th>STATUS</th>
+                            <th>AKSI</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bookBody">
+                        <tr data-isbn="978-0-525-55947-4" data-shelf="Fiksi &bull; A-03">
+                            <td class="muted">BK-001</td>
+                            <td><div class="book-title"><span class="bar" style="background:#1d4ed8"></span><b>The Midnight Library</b></div></td>
+                            <td class="muted">Matt Haig</td>
+                            <td>Fiksi</td>
+                            <td>12</td>
+                            <td class="num-blue">8</td>
+                            <td><span class="status status-active">Tersedia</span></td>
+                        <td>
+                            <div class="actions">
+                                <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
+                            </div>
+                        </td>
+                        </tr>
+                        <tr data-isbn="978-0-593-13842-3" data-shelf="Seni &bull; B-01">
+                            <td class="muted">BK-002</td>
+                            <td><div class="book-title"><span class="bar" style="background:#2563eb"></span><b>The Creative Act</b></div></td>
+                            <td class="muted">Rick Rubin</td>
+                            <td>Seni</td>
+                            <td>8</td>
+                            <td class="num-blue">3</td>
+                            <td><span class="status status-active">Tersedia</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-isbn="978-0-735-21129-2" data-shelf="Pengembangan diri &bull; C-02">
+                            <td class="muted">BK-003</td>
+                            <td><div class="book-title"><span class="bar" style="background:#60a5fa"></span><b>Atomic Habits</b></div></td>
+                            <td class="muted">James Clear</td>
+                            <td>Pengembangan diri</td>
+                            <td>15</td>
+                            <td>0</td>
+                            <td><span class="status status-loan">Dipinjam</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-isbn="978-0-385-53925-8" data-shelf="Fiksi &bull; A-05">
+                            <td class="muted">BK-004</td>
+                            <td><div class="book-title"><span class="bar" style="background:#93c5fd"></span><b>A Little Life</b></div></td>
+                            <td class="muted">Hanya Yanagihara</td>
+                            <td>Fiksi</td>
+                            <td>6</td>
+                            <td class="num-blue">4</td>
+                            <td><span class="status status-active">Tersedia</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-isbn="978-0-062-31609-7" data-shelf="Sejarah &bull; D-01">
+                            <td class="muted">BK-005</td>
+                            <td><div class="book-title"><span class="bar" style="background:#22b8cf"></span><b>Sapiens</b></div></td>
+                            <td class="muted">Yuval Noah Harari</td>
+                            <td>Sejarah</td>
+                            <td>10</td>
+                            <td class="num-blue">7</td>
+                            <td><span class="status status-active">Tersedia</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-isbn="978-1-571-31355-1" data-shelf="Alam &bull; E-02">
+                            <td class="muted">BK-006</td>
+                            <td><div class="book-title"><span class="bar" style="background:#2dd4bf"></span><b>Braiding Sweetgrass</b></div></td>
+                            <td class="muted">Robin Wall Kimmerer</td>
+                            <td>Alam</td>
+                            <td>9</td>
+                            <td class="num-blue">6</td>
+                            <td><span class="status status-active">Tersedia</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-isbn="978-0-465-05065-9" data-shelf="Desain &bull; F-01">
+                            <td class="muted">BK-007</td>
+                            <td><div class="book-title"><span class="bar" style="background:#bfdbfe"></span><b>The Design of Everyday Things</b></div></td>
+                            <td class="muted">Don Norman</td>
+                            <td>Desain</td>
+                            <td>7</td>
+                            <td>0</td>
+                            <td><span class="status status-loan">Perawatan</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-isbn="978-0-156-01219-5" data-shelf="Fiksi &bull; A-08">
+                            <td class="muted">BK-008</td>
+                            <td><div class="book-title"><span class="bar" style="background:#1d4ed8"></span><b>The Little Prince</b></div></td>
+                            <td class="muted">Antoine de Saint-Exupéry</td>
+                            <td>Fiksi</td>
+                            <td>14</td>
+                            <td class="num-blue">9</td>
+                            <td><span class="status status-active">Tersedia</span></td>
+                            <td>
+                                <div class="actions">
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="table-foot">
+                    <span class="muted">Menampilkan 1-8 dari 1,248 judul &bull; 8 judul per halaman</span>
+                    <div class="pager">
+                        <button type="button" class="btn-outline">Sebelumnya</button>
+                        <span class="pill">1 / 156</span>
+                        <button type="button" class="btn-outline">Berikutnya</button>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <span>&copy; 2026 Keyto Perpustakaan</span>
+                <span>Bantuan &amp; dukungan</span>
+            </footer>
+        </main>
+    </div>
+    
+    <div class="modal-overlay" id="bookModal">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="bookModalTitle">
+            <form method="POST" action="#" id="bookForm">
+                <div class="modal-head">
+                    <div class="modal-icon" id="bookModalIcon"><i data-lucide="book-plus"></i></div>
+                    <div class="modal-title">
+                        <h2 id="bookModalTitle">Tambah Buku</h2>
+                        <p id="bookModalDesc">Masukkan judul baru. Perubahan katalog hanya berlaku setelah disimpan.</p>
+                    </div>
+                    <button type="button" class="modal-close" data-close aria-label="Tutup">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="field">
+                        <label for="judul">Judul buku</label>
+                        <input type="text" id="judul" name="judul" placeholder="Masukkan judul buku" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="penulis">Penulis</label>
+                        <input type="text" id="penulis" name="penulis" placeholder="Nama lengkap penulis" required>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="isbn">ISBN</label>
+                            <input type="text" id="isbn" name="isbn" placeholder="978-0-0000000-00-0">
+                        </div>
+                        <div class="field">
+                            <label for="kategori">Kategori</label>
+                            <select name="kategori" id="kategori" required>
+                                <option value="" disabled selected>Pilih kategori</option>
+                                <option value="fiction">Fiksi</option>
+                                <option value="arts">Seni</option>
+                                <option value="self-growth">Pengembangan diri</option>
+                                <option value="history">Sejarah</option>
+                                <option value="nature">Alam</option>
+                                <option value="design">Desain</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="jumlah">Jumlah Golongan</label>
+                            <input type="number" id="jumlah" name="jumlah" value="1" min="1" required>
+                        </div>
+                        <div class="field">
+                            <label for="rak">Lokasi Rak</label>
+                            <input type="text" id="rak" name="rak" placeholder="mis. Fiksi &bull; A-03">
+                        </div>
+                    </div>
+
+                    <div class="hint">
+                        <i data-lucide="info"></i>
+                        <p id="bookModalHint">Golongan baru otomatis ditandai Tersedia.</p>
+                    </div>
+                </div>
+
+                <div class="modal-foot">
+                    <button type="button" class="btn-outline" data-close>Batal</button>
+                    <button type="submit" class="btn-primary" id="bookSubmit">
+                        <i data-lucide="plus"></i>
+                        Simpan Buku
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal modal-sm" role="dialog" aria-modal="true" aria-labelledby="deleteTitle">
+            <form method="POST" action="#">
+                <input type="hidden" name="id_buku" id="deleteId">
+
+                <div class="modal-head">
+                    <div class="modal-icon danger"><i data-lucide="trash-2"></i></div>
+                    <div class="modal-title">
+                        <h2 id="deleteTitle">Hapus Buku?</h2>
+                        <p>Tindakan ini tidak dapat dibatalkan.</p>
+                    </div>
+                    <button type="button" class="modal-close" data-close aria-label="Tutup">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <p class="delete-text">Anda akan menghapus buku ini beserta detail inventarisnya dari katalog secara permanen.</p>
+
+                    <div class="delete-summary">
+                        <span class="bar" id="deleteBar"></span>
+                        <div>
+                            <b id="deleteName">Judul buku</b>
+                            <small id="deleteMeta">Penulis &bull; Kategori &bull; ID</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-foot">
+                    <button type="button" class="btn-outline" data-close>Batal</button>
+                    <button type="submit" class="btn-danger">
+                        <i data-lucide="trash-2"></i>
+                        Hapus Buku
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/buku.js"></script>
+    <script src="js/notifikasi.js"></script>
+</body>
+</html>

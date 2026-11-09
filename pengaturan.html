@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pengaturan - Keyto Perpustakaan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/anggota.css">
+    <link rel="stylesheet" href="css/pengaturan.css">
+    <link rel="stylesheet" href="css/notifikasi.css">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <i data-lucide="book-open"></i>
+            Keyto Perpustakaan
+        </div>
+        <span class="badge">ADMIN WORKSPACE</span>
+
+        <nav class="menu">
+            <a href="index.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+            <a href="anggota.html"><i data-lucide="users"></i>Anggota</a>
+            <a href="buku.html"><i data-lucide="book-open"></i>Buku</a>
+            <a href="#"><i data-lucide="arrow-left-right"></i>Peminjaman</a>
+            <a href="#"><i data-lucide="footprints"></i>Pengunjung</a>
+            <a href="laporan.html"><i data-lucide="chart-no-axes-combined"></i>Laporan</a>
+            <a href="pengaturan.html" class="active"><i data-lucide="settings"></i>Pengaturan</a>
+            <a href="#"><i data-lucide="log-out"></i>Logout</a>
+        </nav>
+    </aside>
+
+    <div class="main">
+
+        <header class="topbar">
+            <span class="crumb">Pengaturan / Profil</span>
+
+            <div class="user">
+                <div class="notif">
+
+                    <button type="button" class="bell" id="bellBtn" aria-label="Notifikasi">
+                        <i data-lucide="bell"></i>
+                        <span class="bell-dot" id="bellDot"></span>
+                    </button>
+
+                    <div class="notif-panel" id="notifPanel">
+
+                        <div class="notif-head">
+                            <div>
+                                <h3>Notifikasi</h3>
+                                <p id="notifCount">3 belum dibaca</p>
+                            </div>
+                            <button type="button" class="btn-outline" id="markAll">Tandai Semua Dibaca</button>
+                        </div>
+
+                        <div class="notif-list">
+
+                            <a href="#" class="notif-item unread">
+                                <span class="notif-icon blue"><i data-lucide="book-open"></i></span>
+                                <div class="notif-text">
+                                    <b>Buku dikembalikan</b>
+                                    <small>Pengembalian &bull; The Creative Act sudah kembali ke rak.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>2 menit lalu</span>
+                                    <i class="notif-dot"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item unread">
+                                <span class="notif-icon blue"><i data-lucide="clock"></i></span>
+                                <div class="notif-text">
+                                    <b>Peminjaman hampir jatuh tempo</b>
+                                    <small>Segera jatuh tempo &bull; Sapiens jatuh tempo besok.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>1 jam lalu</span>
+                                    <i class="notif-dot"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item unread">
+                                <span class="notif-icon blue"><i data-lucide="user-plus"></i></span>
+                                <div class="notif-text">
+                                    <b>Anggota baru terdaftar</b>
+                                    <small>Anggota &bull; Amara Okafor bergabung di perpustakaan.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>3 jam lalu</span>
+                                    <i class="notif-dot"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item">
+                                <span class="notif-icon gray"><i data-lucide="footprints"></i></span>
+                                <div class="notif-text">
+                                    <b>Pengunjung check-in</b>
+                                    <small>Pengunjung &bull; Oliver James check-in.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>Kemarin</span>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item">
+                                <span class="notif-icon red"><i data-lucide="circle-alert"></i></span>
+                                <div class="notif-text">
+                                    <b>Buku terlambat</b>
+                                    <small>Terlambat &bull; A Little Life perlu diingatkan.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>Kemarin</span>
+                                </div>
+                            </a>
+
+                        </div>
+
+                        <a href="#" class="notif-foot">Lihat Semua Notifikasi <i data-lucide="arrow-right"></i></a>
+
+                    </div>
+                </div>
+
+                <div class="avatar">MP</div>
+                <div class="user-info">
+                    <strong>Maya Putri</strong>
+                    <span>Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+
+            <div class="card profile-card">
+
+                <section class="p-section">
+                    <h2>Informasi Pribadi</h2>
+                    <div class="p-grid">
+                        <div class="p-item">
+                            <span class="p-label">NPM</span>
+                            <b>202511223344</b>
+                        </div>
+                        <div class="p-item">
+                            <span class="p-label">Program Studi</span>
+                            <b>Teknik Informatika (S1)</b>
+                        </div>
+                        <div class="p-item">
+                            <span class="p-label">Nama Lengkap</span>
+                            <b>Maya Putri</b>
+                        </div>
+                        <div class="p-item">
+                            <span class="p-label">Email</span>
+                            <b>Maya@gmail.com</b>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="p-section">
+                    <h2>Informasi Akun</h2>
+                    <div class="p-grid">
+                        <div class="p-item">
+                            <span class="p-label">Peran</span>
+                            <b>Admin</b>
+                        </div>
+                        <div class="p-item">
+                            <span class="p-label">Status Akun</span>
+                            <b class="p-status"><span class="p-dot"></span>Aktif</b>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="p-section">
+                    <h2>Keamanan &amp; Kontak</h2>
+                    <div class="p-grid">
+                        <div class="p-item">
+                            <span class="p-label">Nomor Telepon</span>
+                            <b>0812-3456-7890</b>
+                        </div>
+                        <div class="p-item">
+                            <span class="p-label">Kata Sandi</span>
+                            <b class="p-password">************</b>
+                            <a href="#" class="p-link" id="changePassword">Ubah Kata Sandi</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="p-section p-last">
+                    <div>
+                        <h2>Aktivitas Login</h2>
+                        <div class="p-item">
+                            <span class="p-label">Terakhir Login</span>
+                            <b>10 Oktober 2026, 10:05 WIB</b>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-primary" id="editProfile">
+                        <i data-lucide="pencil"></i>
+                        Edit Profil
+                    </button>
+                </section>
+
+            </div>
+
+            <footer class="footer">
+                <span>&copy; 2026 Keyto Perpustakaan</span>
+                <span>Bantuan &amp; dukungan</span>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="js/notifikasi.js"></script>
+</body>
+</html>

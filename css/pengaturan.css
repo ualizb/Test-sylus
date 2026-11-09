@@ -1,0 +1,75 @@
+.profile-card {
+    padding: 32px 36px;
+}
+
+.p-section {
+    margin-bottom: 36px;
+}
+
+.p-section h2 {
+    font-size: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 14px;
+}
+
+.p-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 40px;
+}
+
+.p-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.p-label {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.p-item b {
+    font-size: 14px;
+    color: #0f172a;
+}
+
+.p-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.p-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #22c55e;
+}
+
+.p-password {
+    letter-spacing: 2px;
+}
+
+.p-link {
+    font-size: 11px;
+    color: var(--blue);
+    text-decoration: none;
+    margin-top: 2px;
+}
+
+.p-link:hover {
+    text-decoration: underline;
+}
+
+.p-last {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0;
+}
+
+.p-last h2 {
+    min-width: 280px;
+}

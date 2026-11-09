@@ -1,0 +1,83 @@
+.filter-card {
+    margin-bottom: 16px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.filter-grid .field {
+    margin-bottom: 0;
+}
+
+.filter-grid .field input,
+.filter-grid .field select {
+    padding: 9px 12px;
+    font-size: 11px;
+}
+
+.filter-note {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 14px;
+    font-size: 9px;
+    color: var(--muted);
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tab {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 11px;
+    font-family: inherit;
+    color: #0f172a;
+    cursor: pointer;
+}
+
+.tab:hover {
+    background: #f1f5f9;
+}
+
+.tab.active {
+    background: var(--blue-soft);
+    border-color: var(--blue-soft);
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.stats {
+    margin-bottom: 16px;
+}
+
+.chart-foot {
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.return-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.return-info .pill {
+    display: inline-block;
+}
+
+.chart-box.tall {
+    height: 170px;
+}
