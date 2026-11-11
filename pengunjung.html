@@ -134,10 +134,9 @@
 
             <div class="page-head">
                 <div class="title-icon">
-                    <i data-lucide="footprints"></i>
                     <div>
                         <h1>Data Pengunjung</h1>
-                        <p>Pantau kunjungan harian dan aktivitas pengunjung perpustakaan secara real-time.</p>
+                        <p>Satu kunjungan ke perpustakaan adalah satu langkah lebih dekat menuju dirimu yang bijaksana.</p>
                     </div>
                 </div>
                 <button type="button" class="btn-primary" id="openAddVisitor">
@@ -195,10 +194,141 @@
 
             </form>
 
-            <!-- Langkah 2 diisi di sini -->
+            <h2 class="section-title">Direktori Pengunjung</h2>
+            <p class="section-sub">Catatan kunjungan 01-05 Oktober 2026 &bull; diurutkan berdasarkan kunjungan terbaru</p>
 
-        </main>
-    </div>
+            <div class="card table-wrap">
+                <table class="member-table visitor-table">
+                    <thead>
+                        <tr>
+                            <th>ID PENGUNJUNG</th>
+                            <th>NPM / ID ANGGOTA</th>
+                            <th>NAMA PENGUNJUNG</th>
+                            <th>TIPE</th>
+                            <th>TANGGAL KUNJUNGAN</th>
+                            <th>JAM MASUK</th>
+                            <th>JAM KELUAR</th>
+                            <th>TUJUAN</th>
+                            <th>STATUS</th>
+                            <th>AKSI</th>
+                        </tr>
+                    </thead>
+                    <tbody id="visitorBody">
+                        <tr>
+                            <td class="muted">VS-0108</td>
+                            <td class="muted">MB-0108</td>
+                            <td><b>Maya Chen</b></td>
+                            <td>Anggota</td>
+                            <td>05 Okt 2026</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td><span class="status status-active">Tercatat</span></td>
+                            <td><button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td class="muted">VS-0214</td>
+                            <td class="muted">MB-0214</td>
+                            <td><b>Daniel Brooks</b></td>
+                            <td>Anggota</td>
+                            <td>05 Okt 2026</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td><span class="status status-active">Tercatat</span></td>
+                            <td><button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td class="muted">VS-0326</td>
+                            <td class="muted">MB-0326</td>
+                            <td><b>Sofia Martinez</b></td>
+                            <td>Anggota</td>
+                            <td>05 Okt 2026</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td><span class="status status-active">Tercatat</span></td>
+                            <td><button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td class="muted">VS-0412</td>
+                            <td class="muted">MB-0412</td>
+                            <td><b>Oliver James</b></td>
+                            <td>Anggota</td>
+                            <td>04 Okt 2026</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td><span class="status status-active">Tercatat</span></td>
+                            <td><button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td class="muted">VS-0538</td>
+                            <td class="muted">MB-0538</td>
+                            <td><b>Amara Okafor</b></td>
+                            <td>Anggota</td>
+                            <td>04 Okt 2026</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td><span class="status status-active">Tercatat</span></td>
+                            <td><button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td class="muted">VS-0619</td>
+                            <td class="muted">MB-0619</td>
+                            <td><b>Noah Wilson</b></td>
+                            <td>Anggota</td>
+                            <td>02 Okt 2026</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td><span class="status status-active">Tercatat</span></td>
+                            <td><button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td class="muted">VS-0721</td>
+                            <td class="muted">MB-0721</td>
+                            <td><b>Isla Thompson</b></td>
+                            <td>Anggota</td>
+                            <td>01 Okt 2026</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td><span class="status status-active">Tercatat</span></td>
+                            <td><button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td class="muted">VS-0845</td>
+                            <td class="muted">MB-0845</td>
+                            <td><b>Leo Anderson</b></td>
+                            <td>Anggota</td>
+                            <td>01 Okt 2026</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td class="dash">&mdash;</td>
+                            <td><span class="status status-active">Tercatat</span></td>
+                            <td><button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="table-foot">
+                    <span class="muted">Menampilkan 1-8 dari 1.040 catatan kunjungan &bull; 8 per halaman</span>
+                    <div class="pager">
+                        <button type="button" class="btn-outline">Sebelumnya</button>
+                        <span class="pill">1 / 130</span>
+                        <button type="button" class="btn-outline">Berikutnya</button>
+                    </div>
+                </div>
+
+                <p class="table-note">&mdash; = data belum tersedia. Waktu masuk/keluar dan tujuan kunjungan diisi dari catatan kunjungan.</p>
+            </div>
+
+            <footer class="footer">
+                <span>&copy; 2026 Keyto Perpustakaan</span>
+                <span>Bantuan &amp; dukungan</span>
+            </footer>
 
     <script src="js/notifikasi.js"></script>
     <script>lucide.createIcons();</script>

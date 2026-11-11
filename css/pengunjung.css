@@ -45,3 +45,25 @@
     width: 100%;
     padding: 12px 14px;
 }
+
+.visitor-table th,
+.visitor-table td {
+    padding: 14px 10px;
+    text-align: left;
+}
+
+.visitor-table th:first-child,
+.visitor-table td:first-child {
+    padding-left: 16px;
+}
+
+.dash {
+    color: #94a3b8;
+}
+
+.table-note {
+    font-size: 10px;
+    color: var(--muted);
+    padding: 14px 16px;
+    border-top: 1px solid #f1f5f9;
+}
