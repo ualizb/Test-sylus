@@ -172,6 +172,18 @@
     background: #f1f5f9;
 }
 
+.icon-edit {
+    color: var(--blue);
+}
+
+.icon-delete {
+    color: #dc2626;
+}
+
+.icon-delete:hover {
+    background: #fee2e2;
+}
+
 .table-foot {
     display: flex;
     justify-content: space-between;
@@ -391,4 +403,38 @@
     background: #f8fafc;
     border-top: 1px solid var(--line);
     border-radius: 0 0 16px 16px;
+}
+
+.modal-md {
+    max-width: 480px;
+}
+
+.m-title {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.delete-text {
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.btn-danger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #b91c1c;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background: #991b1b;
 }

@@ -24,7 +24,7 @@
             <a href="anggota.html"><i data-lucide="users"></i>Anggota</a>
             <a href="buku.html"><i data-lucide="book-open"></i>Buku</a>
             <a href="#"><i data-lucide="arrow-left-right"></i>Peminjaman</a>
-            <a href="#"><i data-lucide="footprints"></i>Pengunjung</a>
+            <a href="pengunjung.html"><i data-lucide="footprints"></i>Pengunjung</a>
             <a href="laporan.html"><i data-lucide="chart-no-axes-combined"></i>Laporan</a>
             <a href="pengaturan.html" class="active"><i data-lucide="settings"></i>Pengaturan</a>
             <a href="#"><i data-lucide="log-out"></i>Logout</a>
@@ -131,86 +131,164 @@
 
         <main class="content">
 
-            <div class="card profile-card">
+            <div class="card settings-card">
 
-                <section class="p-section">
-                    <h2>Informasi Pribadi</h2>
-                    <div class="p-grid">
-                        <div class="p-item">
-                            <span class="p-label">NPM</span>
-                            <b>202511223344</b>
-                        </div>
-                        <div class="p-item">
-                            <span class="p-label">Program Studi</span>
-                            <b>Teknik Informatika (S1)</b>
-                        </div>
-                        <div class="p-item">
-                            <span class="p-label">Nama Lengkap</span>
-                            <b>Maya Putri</b>
-                        </div>
-                        <div class="p-item">
-                            <span class="p-label">Email</span>
-                            <b>Maya@gmail.com</b>
+            <div class="settings-head">
+                <div>
+                    <h1>Pengaturan Profil &amp; Akun</h1>
+                    <p>Kelola informasi profil dan keamanan akun di satu tempat.</p>
+                </div>
+                <button type="button" class="btn-soft" id="editProfile">Edit Profil</button>
+            </div>
+
+            <section class="s-section">
+                <h2>Informasi Pribadi</h2>
+                <div class="s-grid">
+                    <div class="s-item">
+                        <span class="s-label">Nama Lengkap</span>
+                        <span class="s-value">Emma Reed</span>
+                    </div>
+                    <div class="s-item">
+                        <span class="s-label">NPM</span>
+                        <span class="s-value">202511223330</span>
+                    </div>
+                    <div class="s-item">
+                        <span class="s-label">Alamat Email</span>
+                        <span class="s-value">emma@gmail.com</span>
+                    </div>
+                    <div class="s-item">
+                        <span class="s-label">Nomor Telepon</span>
+                        <span class="s-value">0812-3456-7890</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="s-section">
+                <h2>Informasi Akun</h2>
+                <div class="s-grid">
+                    <div class="s-item">
+                        <span class="s-label">Peran</span>
+                        <span class="s-value">Admin</span>
+                    </div>
+                    <div class="s-item">
+                        <span class="s-label s-bold">Status Akun</span>
+                        <div class="status-box">
+                            <span class="p-dot"></span>
+                            <b>Aktif</b>
                         </div>
                     </div>
-                </section>
-
-                <section class="p-section">
-                    <h2>Informasi Akun</h2>
-                    <div class="p-grid">
-                        <div class="p-item">
-                            <span class="p-label">Peran</span>
-                            <b>Admin</b>
-                        </div>
-                        <div class="p-item">
-                            <span class="p-label">Status Akun</span>
-                            <b class="p-status"><span class="p-dot"></span>Aktif</b>
-                        </div>
+                    <div class="s-item span-2">
+                        <span class="s-label s-bold">Program Studi</span>
+                        <div class="value-box">Teknik Informatika (S1)</div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section class="p-section">
-                    <h2>Keamanan &amp; Kontak</h2>
-                    <div class="p-grid">
-                        <div class="p-item">
-                            <span class="p-label">Nomor Telepon</span>
-                            <b>0812-3456-7890</b>
-                        </div>
-                        <div class="p-item">
-                            <span class="p-label">Kata Sandi</span>
-                            <b class="p-password">************</b>
-                            <a href="#" class="p-link" id="changePassword">Ubah Kata Sandi</a>
-                        </div>
-                    </div>
-                </section>
+            <section class="s-section">
+                <h2>Ubah Kata Sandi</h2>
+                <p class="s-hint">Kata sandi tetap aman. Perubahan kata sandi bersifat opsional melalui Edit Profil.</p>
+            </section>
 
-                <section class="p-section p-last">
-                    <div>
-                        <h2>Aktivitas Login</h2>
-                        <div class="p-item">
-                            <span class="p-label">Terakhir Login</span>
-                            <b>10 Oktober 2026, 10:05 WIB</b>
-                        </div>
-                    </div>
+            <section class="s-section">
+                <h2>Aktivitas Login</h2>
+                <div class="s-item">
+                    <span class="s-label s-bold">Terakhir Login</span>
+                    <span class="s-value">10 Oktober 2026, 10:05 WIB</span>
+                </div>
+            </section>
 
-                    <button type="button" class="btn-primary" id="editProfile">
-                        <i data-lucide="pencil"></i>
-                        Edit Profil
-                    </button>
-                </section>
+            </div>
+
+            <div class="modal-overlay" id="profileModal">
+                <div class="modal" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+                    <form method="POST" action="#" id="profileForm">
+
+                        <div class="modal-head">
+                            <div class="modal-title">
+                                <h2 id="profileTitle">Edit Profil</h2>
+                                <p>Perbarui informasi pribadi dan keamanan akun.</p>
+                            </div>
+                            <button type="button" class="modal-close" data-close aria-label="Tutup">
+                                <i data-lucide="x"></i>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <h3 class="m-title">Informasi Pribadi</h3>
+
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="nama">Nama Lengkap</label>
+                                    <input type="text" id="nama" name="nama" value="Emma Reed" required>
+                                </div>
+                                <div class="field">
+                                    <label for="npm">NPM</label>
+                                    <input type="text" id="npm" name="npm" value="202511223330" required>
+                                </div>
+                            </div>
+
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="email">Alamat Email</label>
+                                    <input type="email" id="email" name="email" value="emma@gmail.com" required>
+                                </div>
+                                <div class="field">
+                                    <label for="telepon">Nomor Telepon</label>
+                                    <input type="tel" id="telepon" name="telepon" value="0812-3456-7890">
+                                </div>
+                            </div>
+
+                            <div class="m-title-row">
+                                <h3 class="m-title">Ubah Kata Sandi</h3>
+                                <span class="m-optional">Opsional</span>
+                            </div>
+                            <p class="s-hint">Kosongkan semua kolom ini untuk mempertahankan kata sandi.</p>
+
+                            <div class="field">
+                                <label for="sandiLama">Kata Sandi Saat Ini</label>
+                                <input type="password" id="sandiLama" name="password_lama" placeholder="Masukkan kata sandi saat ini">
+                            </div>
+
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="sandiBaru">Kata Sandi Baru</label>
+                                    <input type="password" id="sandiBaru" name="password_baru" placeholder="Masukkan kata sandi baru" minlength="8">
+                                </div>
+                                <div class="field">
+                                    <label for="sandiKonfirmasi">Konfirmasi Kata Sandi Baru</label>
+                                    <input type="password" id="sandiKonfirmasi" name="password_baru_confirmation" placeholder="Ulangi kata sandi baru" minlength="8">
+                                </div>
+                            </div>
+
+                            <label class="check" for="showPassword">
+                                <input type="checkbox" id="showPassword">
+                                <span>Tampilkan kata sandi</span>
+                            </label>
+
+                        </div>
+
+                        <div class="modal-foot">
+                            <button type="button" class="btn-outline" data-close>Batal</button>
+                            <button type="submit" class="btn-primary">
+                                <i data-lucide="check"></i>
+                                Simpan Perubahan
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
             </div>
 
             <footer class="footer">
-                <span>&copy; 2026 Keyto Perpustakaan</span>
-                <span>Bantuan &amp; dukungan</span>
-            </footer>
+                    <span>&copy; 2026 Keyto Perpustakaan</span>
+                    <span>Bantuan &amp; dukungan</span>
+                </footer>
 
         </main>
     </div>
 
-    <script>
-        lucide.createIcons();
-    </script>
     <script src="js/notifikasi.js"></script>
+    <script src="js/pengaturan.js"></script>
 </body>
 </html>

@@ -24,13 +24,13 @@
             <a href="anggota.html"><i data-lucide="users"></i>Anggota</a>
             <a href="buku.html"><i data-lucide="book-open"></i>Buku</a>
             <a href="#"><i data-lucide="arrow-left-right"></i>Peminjaman</a>
-            <a href="#"><i data-lucide="footprints"></i>Pengunjung</a>
+            <a href="pengunjung.html"><i data-lucide="footprints"></i>Pengunjung</a>
             <a href="laporan.html"><i data-lucide="chart-no-axes-combined"></i>Laporan</a>
             <a href="pengaturan.html"><i data-lucide="settings"></i>Pengaturan</a>
             <a href="#"><i data-lucide="log-out"></i>Logout</a>
         </nav>
     </aside>
-        <div class="main">
+    <div class="main">
         <header class="topbar">
             <span class="crumb">Workspace / Dashboard</span>
         
@@ -136,40 +136,40 @@
                     <p>Menemukan diri sendiri di antara rak-rak perpustakaan.</p>
                 </div>
                     
-            <div class="date-picker">
+                <div class="date-picker">
 
-                <button type="button" class="date-btn" id="dateBtn">
-                    <i data-lucide="calendar"></i>
-                    <span id="dateLabel">01 NOV 2026</span>
-                </button>
-
-                <div class="calendar" id="calendar">
-
-                    <div class="cal-head">
-                    <button type="button" class="cal-nav" id="calPrev" aria-label="Bulan sebelumnya">
-                        <i data-lucide="chevron-left"></i>
+                    <button type="button" class="date-btn" id="dateBtn">
+                        <i data-lucide="calendar"></i>
+                        <span id="dateLabel">01 NOV 2026</span>
                     </button>
-                    <b id="calTitle">Oktober 2026</b>
-                    <button type="button" class="cal-nav" id="calNext" aria-label="Bulan berikutnya">
-                        <i data-lucide="chevron-right"></i>
-                    </button>
-                    </div>
 
-                    <div class="cal-week">
-                        <span>Min</span><span>Sen</span><span>Sel</span><span>Rab</span>
-                        <span>Kam</span><span>Jum</span><span>Sab</span>
-                    </div>
+                    <div class="calendar" id="calendar">
 
-                    <div class="cal-grid" id="calGrid"></div>
+                        <div class="cal-head">
+                        <button type="button" class="cal-nav" id="calPrev" aria-label="Bulan sebelumnya">
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <b id="calTitle">Oktober 2026</b>
+                        <button type="button" class="cal-nav" id="calNext" aria-label="Bulan berikutnya">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
+                        </div>
 
-                    <div class="cal-foot">
-                        <button type="button" class="chip" data-quick="today">Hari ini</button>
-                        <button type="button" class="chip" data-quick="yesterday">Kemarin</button>
-                        <button type="button" class="chip" data-quick="week">Minggu ini</button>
-                        <button type="button" class="cal-apply" id="calApply">Terapkan</button>
+                        <div class="cal-week">
+                            <span>Min</span><span>Sen</span><span>Sel</span><span>Rab</span>
+                            <span>Kam</span><span>Jum</span><span>Sab</span>
+                        </div>
+
+                        <div class="cal-grid" id="calGrid"></div>
+
+                        <div class="cal-foot">
+                            <button type="button" class="chip" data-quick="today">Hari ini</button>
+                            <button type="button" class="chip" data-quick="yesterday">Kemarin</button>
+                            <button type="button" class="chip" data-quick="week">Minggu ini</button>
+                            <button type="button" class="cal-apply" id="calApply">Terapkan</button>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
 
                 <section class="stats">
@@ -414,7 +414,7 @@
                     <span>Bantuan &amp; dukungan</span>
                 </footer>
         </main>
-        </div>
+    </div>
     <script src="js/script.js"></script>
     <script src="js/kalender.js"></script>
     <script src="js/notifikasi.js"></script>

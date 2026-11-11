@@ -25,7 +25,7 @@
             <a href="anggota.html"><i data-lucide="users"></i>Anggota</a>
             <a href="buku.html"><i data-lucide="book-open"></i>Buku</a>
             <a href="#"><i data-lucide="arrow-left-right"></i>Peminjaman</a>
-            <a href="#"><i data-lucide="footprints"></i>Pengunjung</a>
+            <a href="pengunjung.html"><i data-lucide="footprints"></i>Pengunjung</a>
             <a href="laporan.html" class="active"><i data-lucide="chart-no-axes-combined"></i>Laporan</a>
             <a href="pengaturan.html"><i data-lucide="settings"></i>Pengaturan</a>
             <a href="#"><i data-lucide="log-out"></i>Logout</a>
@@ -35,7 +35,7 @@
     <div class="main">
 
         <header class="topbar">
-            <span class="crumb">Area Kerja / Laporan</span>
+            <span class="crumb">Workspace / Laporan</span>
 
             <div class="user">
                 <div class="notif">
@@ -191,7 +191,7 @@
 
             <section class="stats">
 
-                <div class="card stat">
+                <div class="card stat" data-cat="loans">
                     <div class="stat-top">
                         <span>Total peminjaman</span>
                         <i data-lucide="arrow-up-right"></i>
@@ -200,7 +200,7 @@
                     <div class="stat-note">29 Sep-05 Okt &bull; 7 hari</div>
                 </div>
 
-                <div class="card stat">
+                <div class="card stat" data-cat="visits">
                     <div class="stat-top">
                         <span>Total kunjungan</span>
                         <i data-lucide="footprints"></i>
@@ -209,7 +209,7 @@
                     <div class="stat-note">Rata-rata 148,6 kunjungan / hari</div>
                 </div>
 
-                <div class="card stat">
+                <div class="card stat" data-cat="loans">
                     <div class="stat-top">
                         <span>Total pengembalian</span>
                         <i data-lucide="book-check"></i>
@@ -218,7 +218,7 @@
                     <div class="stat-note">Data contoh &bull; 7 hari</div>
                 </div>
 
-                <div class="card stat">
+                <div class="card stat" data-cat="members">
                     <div class="stat-top">
                         <span>Anggota aktif</span>
                         <i data-lucide="users"></i>
@@ -231,7 +231,7 @@
 
             <section class="charts">
 
-                <div class="card">
+                <div class="card" data-cat="loans">
                     <h3>Tren peminjaman</h3>
                     <p class="meta">29 Sep-05 Okt 2026 &bull; buku dipinjam per hari</p>
                     <div class="chart-total">
@@ -244,7 +244,7 @@
                     <p class="chart-foot">Puncak: 102 pinjaman pada 04 Okt &bull; 62 pengembalian hari ini</p>
                 </div>
 
-                <div class="card">
+                <div class="card" data-cat="visits">
                     <h3>Tren kunjungan</h3>
                     <p class="meta">29 Sep-05 Okt 2026 &bull; kunjungan per hari</p>
                     <div class="chart-total">
@@ -259,7 +259,7 @@
 
             </section>
 
-            <section class="card return-card">
+            <section class="card return-card" data-cat="loans">
                 <div class="return-info">
                     <h3>Tren pengembalian</h3>
                     <p class="meta">29 Sep-05 Okt 2026 &bull; buku kembali per hari</p>
@@ -279,7 +279,7 @@
 
             <section class="charts">
 
-                <div class="card">
+                <div class="card" data-cat="books">
                     <h3>Status koleksi buku</h3>
                     <p class="meta">Data per 05 Okt 2026 &bull; 1.248 judul unik</p>
 
@@ -306,7 +306,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card" data-cat="members">
                     <h3>Laporan keanggotaan</h3>
                     <p class="meta">Data per 05 Okt 2026 &bull; bulan berjalan</p>
 
@@ -324,13 +324,65 @@
                 </div>
 
             </section>
+            
+            <section class="card table-card">
+                <h3>Ringkasan laporan terperinci</h3>
+                <p class="meta">Semua kategori &bull; aktivitas periode dan posisi akhir &bull; 2026</p>
 
-<!-- Langkah berikutnya diisi di sini -->
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>KATEGORI LAPORAN</th>
+                            <th>RINCIAN</th>
+                            <th>HASIL</th>
+                            <th>PERIODE / TANGGAL</th>
+                            <th>BASIS DATA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-cat="loans">
+                            <td><b>Peminjaman</b></td>
+                            <td>566 dipinjam &bull; 420 kembali&sup1; &bull; selisih +146</td>
+                            <td>566 buku</td>
+                            <td>29 Sep-05 Okt</td>
+                            <td><span class="basis">Periode</span></td>
+                        </tr>
+                        <tr data-cat="visits">
+                            <td><b>Kunjungan</b></td>
+                            <td>Rata-rata 148,6 / hari &bull; puncak 188 pada 04 Okt</td>
+                            <td>1.040 kunjungan</td>
+                            <td>29 Sep-05 Okt</td>
+                            <td><span class="basis">Periode</span></td>
+                        </tr>
+                        <tr data-cat="members">
+                            <td><b>Anggota</b></td>
+                            <td>1.286 terdaftar &bull; 38 ditangguhkan</td>
+                            <td>1.248 aktif</td>
+                            <td>05 Okt 2026</td>
+                            <td><span class="basis basis-end">Posisi akhir</span></td>
+                        </tr>
+                        <tr data-cat="books">
+                            <td><b>Koleksi buku</b></td>
+                            <td>1.248 judul &bull; 9.340 tersedia &bull; 280 perawatan</td>
+                            <td>12.480 buku</td>
+                            <td>05 Okt 2026</td>
+                            <td><span class="basis basis-end">Posisi akhir</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="chart-foot">&sup1; Pengembalian 29 Sep-04 Okt adalah data contoh; 05 Okt (62 buku) sesuai catatan harian.</p>
+            </section>
+
+            <footer class="footer">
+                <span>&copy; 2026 Keyto Perpustakaan</span>
+                <span>Bantuan &amp; dukungan</span>
+            </footer>
 
         </main>
     </div>
 
     <script src="js/notifikasi.js"></script>
-    <script>lucide.createIcons();</script>
+    <script src="js/laporan.js"></script>
 </body>
 </html>

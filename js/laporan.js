@@ -73,3 +73,78 @@ new Chart(document.getElementById('trenKembali'), {
     options: { ...opsiDasar, scales: { x: sumbuX, y: { ...sumbuY(90, 30), display: false } } },
     plugins: [angkaBatang]
 });
+
+const tabs = document.querySelectorAll('#reportTabs .tab');
+const judulMeta = document.querySelector('.table-card .meta');
+
+const namaTab = {
+    all: 'Semua kategori',
+    loans: 'Peminjaman',
+    visits: 'Kunjungan',
+    members: 'Anggota',
+    books: 'Koleksi buku'
+};
+
+function tampilkan(pilihan) {
+    tabs.forEach(function (t) {
+        t.classList.toggle('active', t.dataset.tab === pilihan);
+    });
+
+    document.querySelectorAll('[data-cat]').forEach(function (el) {
+        const cocok = pilihan === 'all' || el.dataset.cat === pilihan;
+        el.classList.toggle('is-hidden', !cocok);
+    });
+
+    document.querySelectorAll('.stats, .charts').forEach(function (baris) {
+        const semuaHilang = Array.from(baris.children).every(function (c) {
+            return c.classList.contains('is-hidden');
+        });
+        baris.classList.toggle('is-hidden', semuaHilang);
+    });
+
+    judulMeta.innerHTML = namaTab[pilihan] +
+        ' &bull; aktivitas periode dan posisi akhir &bull; 2026';
+}
+
+tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+        tampilkan(tab.dataset.tab);
+        history.replaceState(null, '', '?tab=' + tab.dataset.tab);
+    });
+});
+
+const awal = new URLSearchParams(location.search).get('tab');
+tampilkan(namaTab[awal] ? awal : 'all');
+
+tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+        const pilihan = tab.dataset.tab;
+
+        tabs.forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+
+        barisRingkasan.forEach(function (tr) {
+            const cocok = pilihan === 'all' || tr.dataset.cat === pilihan;
+            tr.classList.toggle('is-hidden', !cocok);
+        });
+
+        judulMeta.innerHTML = namaTab[pilihan] +
+            ' &bull; aktivitas periode dan posisi akhir &bull; 2026';
+    });
+});
+
+new Chart(document.getElementById('donutKoleksi'), {
+    type: 'doughnut',
+    data: {
+        labels: ['Tersedia', 'Dipinjam', 'Perawatan'],
+        datasets: [{
+            data: [9340, 2860, 280],
+            backgroundColor: ['#dbeafe', '#60a5fa', '#2563eb'],
+            borderWidth: 0
+        }]
+    },
+    options: {
+        cutout: '80%',
+        plugins: { legend: { display: false } }
+    }
+});

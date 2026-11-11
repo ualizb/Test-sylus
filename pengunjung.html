@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pengunjung - Keyto Perpustakaan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/anggota.css">
+    <link rel="stylesheet" href="css/notifikasi.css">
+    <link rel="stylesheet" href="css/pengunjung.css">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <i data-lucide="book-open"></i>
+            Keyto Perpustakaan
+        </div>
+        <span class="badge">ADMIN WORKSPACE</span>
+
+        <nav class="menu">
+            <a href="index.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+            <a href="anggota.html"><i data-lucide="users"></i>Anggota</a>
+            <a href="buku.html"><i data-lucide="book-open"></i>Buku</a>
+            <a href="#"><i data-lucide="arrow-left-right"></i>Peminjaman</a>
+            <a href="pengunjung.html" class="active"><i data-lucide="footprints"></i>Pengunjung</a>
+            <a href="laporan.html"><i data-lucide="chart-no-axes-combined"></i>Laporan</a>
+            <a href="pengaturan.html"><i data-lucide="settings"></i>Pengaturan</a>
+            <a href="#"><i data-lucide="log-out"></i>Logout</a>
+        </nav>
+    </aside>
+
+    <div class="main">
+
+        <header class="topbar">
+            <span class="crumb">Workspace / Pengunjung</span>
+
+            <div class="user">
+                
+                <div class="notif">
+
+                    <button type="button" class="bell" id="bellBtn" aria-label="Notifikasi">
+                        <i data-lucide="bell"></i>
+                        <span class="bell-dot" id="bellDot"></span>
+                    </button>
+
+                    <div class="notif-panel" id="notifPanel">
+
+                        <div class="notif-head">
+                            <div>
+                                <h3>Notifikasi</h3>
+                                <p id="notifCount">3 belum dibaca</p>
+                            </div>
+                            <button type="button" class="btn-outline" id="markAll">Tandai Semua Dibaca</button>
+                        </div>
+
+                        <div class="notif-list">
+
+                            <a href="#" class="notif-item unread">
+                                <span class="notif-icon blue"><i data-lucide="book-open"></i></span>
+                                <div class="notif-text">
+                                    <b>Buku dikembalikan</b>
+                                    <small>Pengembalian &bull; The Creative Act sudah kembali ke rak.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>2 menit lalu</span>
+                                    <i class="notif-dot"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item unread">
+                                <span class="notif-icon blue"><i data-lucide="clock"></i></span>
+                                <div class="notif-text">
+                                    <b>Peminjaman hampir jatuh tempo</b>
+                                    <small>Segera jatuh tempo &bull; Sapiens jatuh tempo besok.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>1 jam lalu</span>
+                                    <i class="notif-dot"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item unread">
+                                <span class="notif-icon blue"><i data-lucide="user-plus"></i></span>
+                                <div class="notif-text">
+                                    <b>Anggota baru terdaftar</b>
+                                    <small>Anggota &bull; Amara Okafor bergabung di perpustakaan.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>3 jam lalu</span>
+                                    <i class="notif-dot"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item">
+                                <span class="notif-icon gray"><i data-lucide="footprints"></i></span>
+                                <div class="notif-text">
+                                    <b>Pengunjung check-in</b>
+                                    <small>Pengunjung &bull; Oliver James check-in.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>Kemarin</span>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notif-item">
+                                <span class="notif-icon red"><i data-lucide="circle-alert"></i></span>
+                                <div class="notif-text">
+                                    <b>Buku terlambat</b>
+                                    <small>Terlambat &bull; A Little Life perlu diingatkan.</small>
+                                </div>
+                                <div class="notif-meta">
+                                    <span>Kemarin</span>
+                                </div>
+                            </a>
+
+                        </div>
+
+                        <a href="#" class="notif-foot">Lihat Semua Notifikasi <i data-lucide="arrow-right"></i></a>
+
+                    </div>
+                </div>
+
+                <div class="avatar">ER</div>
+                <div class="user-info">
+                    <strong>Emma Reed</strong>
+                    <span>Administrator</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+
+            <div class="page-head">
+                <div class="title-icon">
+                    <i data-lucide="footprints"></i>
+                    <div>
+                        <h1>Data Pengunjung</h1>
+                        <p>Pantau kunjungan harian dan aktivitas pengunjung perpustakaan secara real-time.</p>
+                    </div>
+                </div>
+                <button type="button" class="btn-primary" id="openAddVisitor">
+                    <i data-lucide="user-plus"></i>
+                    Tambah Pengunjung
+                </button>
+            </div>
+
+            <section class="stats stats-3">
+
+                <div class="card stat">
+                    <div class="stat-top">
+                        <span class="teal">Pengunjung Hari Ini</span>
+                        <i data-lucide="footprints"></i>
+                    </div>
+                    <div class="stat-number">156</div>
+                    <div class="stat-note">05 Oktober 2026</div>
+                </div>
+
+                <div class="card stat">
+                    <div class="stat-top">
+                        <span class="teal">Pengunjung Minggu Ini</span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </div>
+                    <div class="stat-number">1,040</div>
+                    <div class="stat-note">29 Sep - 05 Okt 2026</div>
+                </div>
+
+                <div class="card stat">
+                    <div class="stat-top">
+                        <span class="teal">Pengunjung Bulan Ini</span>
+                        <i data-lucide="book-open"></i>
+                    </div>
+                    <div class="stat-number">&mdash;</div>
+                    <div class="stat-note">Total bulanan belum tersedia</div>
+                </div>
+
+            </section>
+
+            <form method="GET" action="pengunjung.html">
+
+                <div class="search search-full">
+                    <i data-lucide="search"></i>
+                    <input type="text" name="q" placeholder="Cari pengunjung: nama, ID pengunjung, NPM / ID anggota">
+                </div>
+
+                <div class="filter-type">
+                    <label for="tipe">Filter berdasarkan tipe pengunjung</label>
+                    <select class="select" id="tipe" name="tipe" onchange="this.form.submit()">
+                        <option value="all">Semua tipe pengunjung</option>
+                        <option value="member">Anggota</option>
+                        <option value="guest">Tamu</option>
+                    </select>
+                </div>
+
+            </form>
+
+            <!-- Langkah 2 diisi di sini -->
+
+        </main>
+    </div>
+
+    <script src="js/notifikasi.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

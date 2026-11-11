@@ -40,16 +40,27 @@
     color: #b45309;
 }
 
+.status-maintenance {
+    background: #bbf7d0;
+    color: #166534;
+}
+
 .icon-edit {
     color: var(--blue);
+    background: #eaf1ff;
+}
+
+.icon-edit:hover {
+    background: var(--blue-soft);
 }
 
 .icon-delete {
     color: #dc2626;
+    background: #fee2e2;
 }
 
 .icon-delete:hover {
-    background: #fee2e2;
+    background: #fecaca;
 }
 
 .book-table td {

@@ -22,7 +22,7 @@
             <a href="anggota.html" class="active"><i data-lucide="users"></i>Anggota</a>
             <a href="buku.html"><i data-lucide="book-open"></i>Buku</a>
             <a href="#"><i data-lucide="arrow-left-right"></i>Peminjaman</a>
-            <a href="#"><i data-lucide="footprints"></i>Pengunjung</a>
+            <a href="pengunjung.html"><i data-lucide="footprints"></i>Pengunjung</a>
             <a href="laporan.html"><i data-lucide="chart-no-axes-combined"></i>Laporan</a>
             <a href="pengaturan.html"><i data-lucide="settings"></i>Pengaturan</a> 
             <a href="#"><i data-lucide="log-out"></i>Logout</a>        
@@ -188,10 +188,6 @@
                     <option value="borrowed">Paling banyak pinjam</option>
                 </select>
 
-                <button class="btn-outline">
-                    <i data-lucide="download"></i>
-                    Ekspor
-                </button>
             </form>
 
             <h2 class="section-title">Direktori anggota</h2>
@@ -222,8 +218,8 @@
                             <td><span class="status status-active">Aktif</span></td>
                             <td>
                                 <div class="actions">
-                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
-                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -238,8 +234,8 @@
                             <td><span class="status status-active">Aktif</span></td>
                             <td>
                                 <div class="actions">
-                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
-                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -254,8 +250,8 @@
                             <td><span class="status status-active">Aktif</span></td>
                             <td>
                                 <div class="actions">
-                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
-                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -270,8 +266,8 @@
                             <td><span class="status status-active">Aktif</span></td>
                             <td>
                                 <div class="actions">
-                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
-                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -286,8 +282,8 @@
                             <td><span class="status status-active">Aktif</span></td>
                             <td>
                                 <div class="actions">
-                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
-                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -302,8 +298,8 @@
                             <td><span class="status status-suspended">Ditangguhkan</span></td>
                             <td>
                                 <div class="actions">
-                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
-                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -318,8 +314,8 @@
                             <td><span class="status status-active">Aktif</span></td>
                             <td>
                                 <div class="actions">
-                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
-                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -334,8 +330,8 @@
                             <td><span class="status status-active">Aktif</span></td>
                             <td>
                                 <div class="actions">
-                                    <button class="icon-act" aria-label="Lihat"><i data-lucide="eye"></i></button>
-                                    <button class="icon-act" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
+                                    <button type="button" class="icon-act icon-delete" aria-label="Hapus"><i data-lucide="trash-2"></i></button>
                                 </div>
                             </td>
                         </tr>     
@@ -462,6 +458,86 @@
                     <button type="submit" class="btn-primary">
                         <i data-lucide="user-plus"></i>
                         Tambah Anggota
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="editModal">
+        <div class="modal modal-md" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+            <form method="POST" action="#" id="editForm">
+                <input type="hidden" name="id_anggota" id="editId">
+
+                <div class="modal-head">
+                    <div class="modal-title">
+                        <h2 id="editTitle">Ubah Data</h2>
+                        <p id="editSub">MB-0000 &bull; Nama anggota</p>
+                    </div>
+                    <button type="button" class="modal-close" data-close aria-label="Tutup">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="editNama">Nama Lengkap</label>
+                            <input type="text" id="editNama" name="nama" required>
+                        </div>
+                        <div class="field">
+                            <label for="editEmail">Alamat Email</label>
+                            <input type="email" id="editEmail" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="editStatus">Status</label>
+                            <select id="editStatus" name="status">
+                                <option value="active">Aktif</option>
+                                <option value="suspended">Ditangguhkan</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-foot">
+                    <button type="button" class="btn-outline" data-close>Batal</button>
+                    <button type="submit" class="btn-primary">
+                        <i data-lucide="check"></i>
+                        Simpan Perubahan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal modal-md" role="dialog" aria-modal="true" aria-labelledby="deleteTitle">
+            <form method="POST" action="#" id="deleteForm">
+                <input type="hidden" name="id_anggota" id="deleteId">
+
+                <div class="modal-head">
+                    <div class="modal-title">
+                        <h2 id="deleteTitle">Hapus Data</h2>
+                        <p id="deleteSub">MB-0000 &bull; Nama anggota</p>
+                    </div>
+                    <button type="button" class="modal-close" data-close aria-label="Tutup">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <h3 class="m-title">Hapus data anggota ini?</h3>
+                    <p class="delete-text">Tindakan ini tidak dapat dibatalkan. Pastikan anggota tidak memiliki peminjaman aktif sebelum menghapus.</p>
+                </div>
+
+                <div class="modal-foot">
+                    <button type="button" class="btn-outline" data-close>Batal</button>
+                    <button type="submit" class="btn-danger">
+                        <i data-lucide="trash-2"></i>
+                        Hapus Data
                     </button>
                 </div>
             </form>

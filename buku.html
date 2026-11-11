@@ -24,7 +24,7 @@
             <a href="anggota.html"><i data-lucide="users"></i>Anggota</a>
             <a href="buku.html" class="active"><i data-lucide="book-open"></i>Buku</a>
             <a href="#"><i data-lucide="arrow-left-right"></i>Peminjaman</a>
-            <a href="#"><i data-lucide="footprints"></i>Pengunjung</a>
+            <a href="pengunjung.html"><i data-lucide="footprints"></i>Pengunjung</a>
             <a href="laporan.html"><i data-lucide="chart-no-axes-combined"></i>Laporan</a>
             <a href="pengaturan.html"><i data-lucide="settings"></i>Pengaturan</a>
             <a href="#"><i data-lucide="log-out"></i>Logout</a>
@@ -196,10 +196,6 @@
                     <option value="maintenance">Perawatan</option>
                 </select>
 
-                <button type="button" class="btn-outline">
-                    <i data-lucide="download"></i>
-                    Ekspor
-                </button>
             </form>
 
             <div class="section-row">
@@ -320,7 +316,7 @@
                             <td>Desain</td>
                             <td>7</td>
                             <td>0</td>
-                            <td><span class="status status-loan">Perawatan</span></td>
+                            <td><span class="status status-maintenance">Perawatan</span></td>
                             <td>
                                 <div class="actions">
                                     <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
@@ -362,15 +358,16 @@
             </footer>
         </main>
     </div>
-    
+
     <div class="modal-overlay" id="bookModal">
         <div class="modal" role="dialog" aria-modal="true" aria-labelledby="bookModalTitle">
             <form method="POST" action="#" id="bookForm">
+
                 <div class="modal-head">
-                    <div class="modal-icon" id="bookModalIcon"><i data-lucide="book-plus"></i></div>
+                    <div class="modal-icon"><i data-lucide="book-plus"></i></div>
                     <div class="modal-title">
                         <h2 id="bookModalTitle">Tambah Buku</h2>
-                        <p id="bookModalDesc">Masukkan judul baru. Perubahan katalog hanya berlaku setelah disimpan.</p>
+                        <p>Masukkan judul baru. Perubahan katalog hanya berlaku setelah disimpan.</p>
                     </div>
                     <button type="button" class="modal-close" data-close aria-label="Tutup">
                         <i data-lucide="x"></i>
@@ -389,45 +386,39 @@
                         <input type="text" id="penulis" name="penulis" placeholder="Nama lengkap penulis" required>
                     </div>
 
+                    <div class="field">
+                        <label for="kategori">Kategori</label>
+                        <select id="kategori" name="kategori" required>
+                            <option value="" disabled selected>Pilih kategori</option>
+                            <option value="Fiksi">Fiksi</option>
+                            <option value="Seni">Seni</option>
+                            <option value="Pengembangan diri">Pengembangan diri</option>
+                            <option value="Sejarah">Sejarah</option>
+                            <option value="Alam">Alam</option>
+                            <option value="Desain">Desain</option>
+                        </select>
+                    </div>
+
                     <div class="field-row">
                         <div class="field">
-                            <label for="isbn">ISBN</label>
-                            <input type="text" id="isbn" name="isbn" placeholder="978-0-0000000-00-0">
+                            <label for="stok">Stok</label>
+                            <input type="number" id="stok" name="stok" value="1" min="1" required>
                         </div>
                         <div class="field">
-                            <label for="kategori">Kategori</label>
-                            <select name="kategori" id="kategori" required>
-                                <option value="" disabled selected>Pilih kategori</option>
-                                <option value="fiction">Fiksi</option>
-                                <option value="arts">Seni</option>
-                                <option value="self-growth">Pengembangan diri</option>
-                                <option value="history">Sejarah</option>
-                                <option value="nature">Alam</option>
-                                <option value="design">Desain</option>
+                            <label for="status">Status</label>
+                            <select id="status" name="status">
+                                <option value="Tersedia">Tersedia</option>
+                                <option value="Dipinjam">Dipinjam</option>
+                                <option value="Perawatan">Perawatan</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="field-row">
-                        <div class="field">
-                            <label for="jumlah">Jumlah Golongan</label>
-                            <input type="number" id="jumlah" name="jumlah" value="1" min="1" required>
-                        </div>
-                        <div class="field">
-                            <label for="rak">Lokasi Rak</label>
-                            <input type="text" id="rak" name="rak" placeholder="mis. Fiksi &bull; A-03">
-                        </div>
-                    </div>
-
-                    <div class="hint">
-                        <i data-lucide="info"></i>
-                        <p id="bookModalHint">Golongan baru otomatis ditandai Tersedia.</p>
-                    </div>
                 </div>
 
                 <div class="modal-foot">
                     <button type="button" class="btn-outline" data-close>Batal</button>
-                    <button type="submit" class="btn-primary" id="bookSubmit">
+                    <button type="submit" class="btn-primary">
                         <i data-lucide="plus"></i>
                         Simpan Buku
                     </button>
@@ -437,16 +428,15 @@
         </div>
     </div>
 
-    <div class="modal-overlay" id="deleteModal">
-        <div class="modal modal-sm" role="dialog" aria-modal="true" aria-labelledby="deleteTitle">
-            <form method="POST" action="#">
-                <input type="hidden" name="id_buku" id="deleteId">
+    <div class="modal-overlay" id="editBookModal">
+        <div class="modal modal-md" role="dialog" aria-modal="true" aria-labelledby="editBookTitle">
+            <form method="POST" action="#" id="editBookForm">
+                <input type="hidden" name="id_buku" id="editBookId">
 
                 <div class="modal-head">
-                    <div class="modal-icon danger"><i data-lucide="trash-2"></i></div>
                     <div class="modal-title">
-                        <h2 id="deleteTitle">Hapus Buku?</h2>
-                        <p>Tindakan ini tidak dapat dibatalkan.</p>
+                        <h2 id="editBookTitle">Ubah Buku</h2>
+                        <p id="editBookSub">BK-000 &bull; Judul buku</p>
                     </div>
                     <button type="button" class="modal-close" data-close aria-label="Tutup">
                         <i data-lucide="x"></i>
@@ -454,22 +444,87 @@
                 </div>
 
                 <div class="modal-body">
-                    <p class="delete-text">Anda akan menghapus buku ini beserta detail inventarisnya dari katalog secara permanen.</p>
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="eJudul">Judul Buku</label>
+                            <input type="text" id="eJudul" name="judul" required>
+                        </div>
+                        <div class="field">
+                            <label for="ePenulis">Penulis</label>
+                            <input type="text" id="ePenulis" name="penulis" required>
+                        </div>
+                    </div>
 
-                    <div class="delete-summary">
-                        <span class="bar" id="deleteBar"></span>
-                        <div>
-                            <b id="deleteName">Judul buku</b>
-                            <small id="deleteMeta">Penulis &bull; Kategori &bull; ID</small>
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="eKategori">Kategori</label>
+                            <select id="eKategori" name="kategori">
+                                <option value="Fiksi">Fiksi</option>
+                                <option value="Seni">Seni</option>
+                                <option value="Pengembangan diri">Pengembangan diri</option>
+                                <option value="Sejarah">Sejarah</option>
+                                <option value="Alam">Alam</option>
+                                <option value="Desain">Desain</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="eStok">Stok</label>
+                            <input type="number" id="eStok" name="stok" min="0" required>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="eTersedia">Tersedia</label>
+                            <input type="number" id="eTersedia" name="tersedia" min="0" required>
+                        </div>
+                        <div class="field">
+                            <label for="eStatus">Status</label>
+                            <select id="eStatus" name="status">
+                                <option value="Tersedia">Tersedia</option>
+                                <option value="Dipinjam">Dipinjam</option>
+                                <option value="Perawatan">Perawatan</option>
+                            </select>
                         </div>
                     </div>
                 </div>
-                
+
+                <div class="modal-foot">
+                    <button type="button" class="btn-outline" data-close>Batal</button>
+                    <button type="submit" class="btn-primary">
+                        <i data-lucide="check"></i>
+                        Simpan Perubahan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal modal-md" role="dialog" aria-modal="true" aria-labelledby="deleteTitle">
+            <form method="POST" action="#">
+                <input type="hidden" name="id_buku" id="deleteId">
+
+                <div class="modal-head">
+                    <div class="modal-title">
+                        <h2 id="deleteTitle">Hapus Buku</h2>
+                        <p id="deleteSub">BK-000 &bull; Judul buku</p>
+                    </div>
+                    <button type="button" class="modal-close" data-close aria-label="Tutup">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <h3 class="m-title">Hapus buku ini dari katalog?</h3>
+                    <p class="delete-text">Tindakan ini tidak dapat dibatalkan. Pastikan tidak ada peminjaman aktif sebelum menghapus data buku.</p>
+                </div>
+
                 <div class="modal-foot">
                     <button type="button" class="btn-outline" data-close>Batal</button>
                     <button type="submit" class="btn-danger">
                         <i data-lucide="trash-2"></i>
-                        Hapus Buku
+                        Hapus Data
                     </button>
                 </div>
             </form>
