@@ -1,0 +1,58 @@
+.section-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 24px 0 14px;
+}
+
+.section-row .section-title {
+    margin-top: 0;
+}
+
+.section-row .section-sub {
+    margin-bottom: 0;
+}
+
+.section-row > .muted {
+    font-size: 10px;
+}
+
+.loan-table th,
+.loan-table td {
+    text-align: left;
+    padding: 14px 10px;
+}
+
+.loan-table th:first-child,
+.loan-table td:first-child {
+    padding-left: 16px;
+}
+
+.dash {
+    color: #94a3b8;
+}
+
+.status-loan {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.status-returned {
+    background: #dbeafe;
+    color: #1e3a8a;
+}
+
+.status-overdue {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.icon-edit {
+    color: var(--blue);
+    background: #eaf1ff;
+}
+
+.icon-edit:hover {
+    background: var(--blue-soft);
+}
+
