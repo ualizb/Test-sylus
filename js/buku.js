@@ -49,15 +49,15 @@ document.getElementById('bookBody').addEventListener('click', function (e) {
     const status = tr.querySelector('.status').textContent.trim();
 
     if (tombol.classList.contains('icon-edit')) {
-        document.getElementById('editBookId').value = d.id;
-        document.getElementById('editBookSub').textContent = d.id + ' \u2022 ' + d.judul;
-        document.getElementById('eJudul').value = d.judul;
-        document.getElementById('ePenulis').value = d.penulis;
-        document.getElementById('eKategori').value = d.kategori;
-        document.getElementById('eStok').value = d.stok;
-        document.getElementById('eTersedia').value = d.tersedia;
-        document.getElementById('eStatus').value = status;
-        buka(editBookModal);
+    document.getElementById('eId').value = d.id;
+    document.getElementById('editBookSub').textContent = d.id + ' \u2022 ' + d.judul;
+    document.getElementById('eJudul').value = d.judul;
+    document.getElementById('ePenulis').value = d.penulis;
+    document.getElementById('eKategori').value = d.kategori;
+    document.getElementById('eStok').value = d.stok;
+    document.getElementById('eTersedia').value = d.tersedia;
+    document.getElementById('eStatus').value = status;
+    buka(editBookModal);
     } else {
         document.getElementById('deleteId').value = d.id;
         document.getElementById('deleteSub').textContent = d.id + ' \u2022 ' + d.judul;
@@ -78,3 +78,5 @@ document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') tutupSemua();
 });
+
+document.getElementById('eId').value = d.id;

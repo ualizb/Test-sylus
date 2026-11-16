@@ -67,3 +67,26 @@
     padding: 14px 16px;
     border-top: 1px solid #f1f5f9;
 }
+
+#visitorModal .field input,
+#visitorModal .field select {
+    padding: 13px 14px;
+}
+
+.visitor-table {
+    min-width: 1000px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+#editVisitorModal .field input,
+#editVisitorModal .field select {
+    padding: 13px 14px;
+}
+
+.status-unrecorded {
+    background: #fef3c7;
+    color: #b45309;
+}

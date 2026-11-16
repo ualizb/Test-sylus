@@ -126,3 +126,13 @@
 .btn-danger:hover {
     background: #991b1b;
 }
+
+#bookModal .field input,
+#bookModal .field select {
+    padding: 13px 14px;
+}
+
+#editBookModal .field input,
+#editBookModal .field select {
+    padding: 13px 14px;
+}

@@ -146,7 +146,7 @@
 
                 <div class="card stat">
                     <div class="stat-top">
-                        <span>Judul Unik</span>
+                        <span>Semua Judul Buku</span>
                         <i data-lucide="library"></i>
                     </div>
                     <div class="stat-number">1,248</div>
@@ -214,7 +214,7 @@
                             <th>STOK</th>
                             <th>TERSEDIA</th>
                             <th>STATUS</th>
-                            <th>AKSI</th>
+                            <th>UBAH</th>
                         </tr>
                     </thead>
 
@@ -360,7 +360,7 @@
     </div>
 
     <div class="modal-overlay" id="bookModal">
-        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="bookModalTitle">
+        <div class="modal modal-md" role="dialog" aria-modal="true" aria-labelledby="bookModalTitle">
             <form method="POST" action="#" id="bookForm">
 
                 <div class="modal-head">
@@ -374,39 +374,17 @@
                     </button>
                 </div>
 
+                
                 <div class="modal-body">
-
-                    <div class="field">
-                        <label for="judul">Judul buku</label>
-                        <input type="text" id="judul" name="judul" placeholder="Masukkan judul buku" required>
-                    </div>
-
-                    <div class="field">
-                        <label for="penulis">Penulis</label>
-                        <input type="text" id="penulis" name="penulis" placeholder="Nama lengkap penulis" required>
-                    </div>
-
-                    <div class="field">
-                        <label for="kategori">Kategori</label>
-                        <select id="kategori" name="kategori" required>
-                            <option value="" disabled selected>Pilih kategori</option>
-                            <option value="Fiksi">Fiksi</option>
-                            <option value="Seni">Seni</option>
-                            <option value="Pengembangan diri">Pengembangan diri</option>
-                            <option value="Sejarah">Sejarah</option>
-                            <option value="Alam">Alam</option>
-                            <option value="Desain">Desain</option>
-                        </select>
-                    </div>
 
                     <div class="field-row">
                         <div class="field">
-                            <label for="stok">Stok</label>
-                            <input type="number" id="stok" name="stok" value="1" min="1" required>
+                            <label for="bId">ID Buku</label>
+                            <input type="text" id="bId" value="Dibuat otomatis" readonly class="readonly">
                         </div>
                         <div class="field">
-                            <label for="status">Status</label>
-                            <select id="status" name="status">
+                            <label for="bStatus">Status</label>
+                            <select id="bStatus" name="status">
                                 <option value="Tersedia">Tersedia</option>
                                 <option value="Dipinjam">Dipinjam</option>
                                 <option value="Perawatan">Perawatan</option>
@@ -414,6 +392,40 @@
                         </div>
                     </div>
 
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="bJudul">Judul Buku</label>
+                            <input type="text" id="bJudul" name="judul" placeholder="Masukkan judul buku" required>
+                        </div>
+                        <div class="field">
+                            <label for="bTersedia">Tersedia</label>
+                            <input type="number" id="bTersedia" name="tersedia" value="1" min="0" required>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="bKategori">Kategori</label>
+                            <select id="bKategori" name="kategori" required>
+                                <option value="" disabled selected>Pilih kategori</option>
+                                <option value="Fiksi">Fiksi</option>
+                                <option value="Seni">Seni</option>
+                                <option value="Pengembangan diri">Pengembangan diri</option>
+                                <option value="Sejarah">Sejarah</option>
+                                <option value="Alam">Alam</option>
+                                <option value="Desain">Desain</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="bStok">Stok</label>
+                            <input type="number" id="bStok" name="stok" value="1" min="1" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="bPenulis">Penulis</label>
+                        <input type="text" id="bPenulis" name="penulis" placeholder="Nama lengkap penulis" required>
+                    </div>
                 </div>
 
                 <div class="modal-foot">
@@ -431,9 +443,9 @@
     <div class="modal-overlay" id="editBookModal">
         <div class="modal modal-md" role="dialog" aria-modal="true" aria-labelledby="editBookTitle">
             <form method="POST" action="#" id="editBookForm">
-                <input type="hidden" name="id_buku" id="editBookId">
-
+                
                 <div class="modal-head">
+                    <div class="modal-icon"><i data-lucide="pencil"></i></div>
                     <div class="modal-title">
                         <h2 id="editBookTitle">Ubah Buku</h2>
                         <p id="editBookSub">BK-000 &bull; Judul buku</p>
@@ -444,14 +456,30 @@
                 </div>
 
                 <div class="modal-body">
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="eId">ID Buku</label>
+                            <input type="text" id="eId" name="id_buku" readonly class="readonly">
+                        </div>
+                        <div class="field">
+                            <label for="eStatus">Status</label>
+                            <select id="eStatus" name="status">
+                                <option value="Tersedia">Tersedia</option>
+                                <option value="Dipinjam">Dipinjam</option>
+                                <option value="Perawatan">Perawatan</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="field-row">
                         <div class="field">
                             <label for="eJudul">Judul Buku</label>
                             <input type="text" id="eJudul" name="judul" required>
                         </div>
                         <div class="field">
-                            <label for="ePenulis">Penulis</label>
-                            <input type="text" id="ePenulis" name="penulis" required>
+                            <label for="eTersedia">Tersedia</label>
+                            <input type="number" id="eTersedia" name="tersedia" min="0" required>
                         </div>
                     </div>
 
@@ -473,20 +501,11 @@
                         </div>
                     </div>
 
-                    <div class="field-row">
-                        <div class="field">
-                            <label for="eTersedia">Tersedia</label>
-                            <input type="number" id="eTersedia" name="tersedia" min="0" required>
-                        </div>
-                        <div class="field">
-                            <label for="eStatus">Status</label>
-                            <select id="eStatus" name="status">
-                                <option value="Tersedia">Tersedia</option>
-                                <option value="Dipinjam">Dipinjam</option>
-                                <option value="Perawatan">Perawatan</option>
-                            </select>
-                        </div>
+                    <div class="field">
+                        <label for="ePenulis">Penulis</label>
+                        <input type="text" id="ePenulis" name="penulis" required>
                     </div>
+
                 </div>
 
                 <div class="modal-foot">
@@ -496,6 +515,7 @@
                         Simpan Perubahan
                     </button>
                 </div>
+
             </form>
         </div>
     </div>
@@ -533,5 +553,6 @@
 
     <script src="js/buku.js"></script>
     <script src="js/notifikasi.js"></script>
+    <script src="js/transisi.js"></script>
 </body>
 </html>

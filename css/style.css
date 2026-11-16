@@ -510,3 +510,84 @@ tbody tr:hover {
     color: var(--muted);
     padding: 16px 0 0;
 }
+
+/*transisi*/
+
+.content {
+    animation: halaman-masuk 0.4s ease both;
+}
+
+@keyframes halaman-masuk {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.content.keluar {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.menu a {
+    transition: background 0.2s, color 0.2s, box-shadow 0.25s, transform 0.25s;
+}
+
+.menu a:hover {
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+    transform: translateX(3px);
+}
+
+.menu a.active {
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.18);
+}
+
+.menu a.pindah {
+    background: var(--blue-soft);
+    color: var(--blue);
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.28);
+    transform: translateX(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .content,
+    .content.keluar,
+    .menu a {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* fade in */
+
+body {
+    animation: fade-in 0.5s ease both;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.content {
+    animation: halaman-masuk 0.5s ease both;
+}
+
+@keyframes halaman-masuk {
+    from { transform: translateY(12px); }
+    to   { transform: none; }
+}
+
+/*neon*/
+
+.btn:hover {
+    box-shadow: 
+        0 0 22px #60a5fa,
+        0 0 40px #2563eb;
+}

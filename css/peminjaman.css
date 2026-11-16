@@ -56,3 +56,9 @@
     background: var(--blue-soft);
 }
 
+#loanModal .field input,
+#loanModal .field select,
+#editLoanModal .field input,
+#editLoanModal .field select {
+    padding: 13px 14px;
+}

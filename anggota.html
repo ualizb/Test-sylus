@@ -179,7 +179,7 @@
                 <select class="select" id="statusFilter" name="status" onchange="this.form.submit()">
                     <option value="all">Semua status</option>
                     <option value="active">Aktif</option>
-                    <option value="suspended">Ditangguhkan</option>
+                    <option value="suspended">Tidak Aktif</option>
                 </select>
 
                 <select class="select" id="sortFilter">
@@ -204,7 +204,7 @@
                             <th>TOTAL KUNJUNGAN</th>
                             <th>KUNJUNGAN TERAKHIR</th>
                             <th>STATUS</th>
-                            <th>AKSI</th>
+                            <th>UBAH</th>
                         </tr>
                     </thead>
                     <tbody id="memberBody">
@@ -295,7 +295,7 @@
                             <td>2</td>
                             <td>4</td>
                             <td>02 Okt 2026</td>
-                            <td><span class="status status-suspended">Ditangguhkan</span></td>
+                            <td><span class="status status-suspended">Tidak Aktif</span></td>
                             <td>
                                 <div class="actions">
                                     <button type="button" class="icon-act icon-edit" aria-label="Ubah"><i data-lucide="pencil"></i></button>
@@ -399,14 +399,15 @@
 
                 <div class="modal-body">
 
-                    <div class="field">
-                        <label for="nama">Nama lengkap</label>
-                        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
-                    </div>
-
-                    <div class="field">
-                        <label for="email">Email / Nama pengguna</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="nama">Nama lengkap</label>
+                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
                     </div>
 
                     <div class="field-row">
@@ -438,17 +439,33 @@
                         </div>
 
                         <div class="field">
-                            <label for="statusAnggota">Status keanggotaan</label>
+                            <label for="statusAnggota">Status</label>
                             <select id="statusAnggota" name="status">
                                 <option value="active">Aktif</option>
-                                <option value="suspended">Ditangguhkan</option>
+                                <option value="inactive">Tidak Aktif</option>
                             </select>
                         </div>
                     </div>
 
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="totalPinjam">Total pinjam</label>
+                            <input type="number" id="totalPinjam" name="total_pinjam" value="0" min="0">
+                        </div>
+                        <div class="field">
+                            <label for="totalKunjungan">Total kunjungan</label>
+                            <input type="number" id="totalKunjungan" name="total_kunjungan" value="0" min="0">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="kunjunganTerakhir">Kunjungan terakhir</label>
+                        <input type="date" id="kunjunganTerakhir" name="kunjungan_terakhir">
+                    </div>
+
                     <div class="hint">
                         <i data-lucide="info"></i>
-                        <p>Gunakan minimal 8 karakter, termasuk angka. Anggota aktif dapat langsung meminjam buku.</p>
+                        <p>Gunakan Kata Sandi minimal 8 karakter, termasuk angka.</p>
                     </div>
 
                 </div>
@@ -467,11 +484,11 @@
     <div class="modal-overlay" id="editModal">
         <div class="modal modal-md" role="dialog" aria-modal="true" aria-labelledby="editTitle">
             <form method="POST" action="#" id="editForm">
-                <input type="hidden" name="id_anggota" id="editId">
 
                 <div class="modal-head">
+                    <div class="modal-icon"><i data-lucide="pencil"></i></div>
                     <div class="modal-title">
-                        <h2 id="editTitle">Ubah Data</h2>
+                        <h2 id="editTitle">Ubah Anggota</h2>
                         <p id="editSub">MB-0000 &bull; Nama anggota</p>
                     </div>
                     <button type="button" class="modal-close" data-close aria-label="Tutup">
@@ -480,26 +497,48 @@
                 </div>
 
                 <div class="modal-body">
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="editId">ID Anggota</label>
+                            <input type="text" id="editId" name="id_anggota" readonly class="readonly">
+                        </div>
+                        <div class="field">
+                            <label for="editStatus">Status</label>
+                            <select id="editStatus" name="status">
+                                <option value="active">Aktif</option>
+                                <option value="inactive">Tidak Aktif</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="field-row">
                         <div class="field">
                             <label for="editNama">Nama Lengkap</label>
                             <input type="text" id="editNama" name="nama" required>
                         </div>
                         <div class="field">
-                            <label for="editEmail">Alamat Email</label>
-                            <input type="email" id="editEmail" name="email" required>
+                            <label for="editTerakhir">Kunjungan terakhir</label>
+                            <input type="date" id="editTerakhir" name="kunjungan_terakhir">
                         </div>
                     </div>
 
                     <div class="field-row">
                         <div class="field">
-                            <label for="editStatus">Status</label>
-                            <select id="editStatus" name="status">
-                                <option value="active">Aktif</option>
-                                <option value="suspended">Ditangguhkan</option>
-                            </select>
+                            <label for="editPinjam">Total pinjam</label>
+                            <input type="number" id="editPinjam" name="total_pinjam" min="0">
+                        </div>
+                        <div class="field">
+                            <label for="editKunjungan">Total kunjungan</label>
+                            <input type="number" id="editKunjungan" name="total_kunjungan" min="0">
                         </div>
                     </div>
+
+                    <div class="field">
+                        <label for="editEmail">Alamat Email</label>
+                        <input type="email" id="editEmail" name="email" required>
+                    </div>
+
                 </div>
 
                 <div class="modal-foot">
@@ -509,6 +548,7 @@
                         Simpan Perubahan
                     </button>
                 </div>
+
             </form>
         </div>
     </div>
@@ -550,5 +590,6 @@
 
     <script src="js/anggota.js"></script>
     <script src="js/notifikasi.js"></script>
+    <script src="js/transisi.js"></script>
 </body>
 </html>

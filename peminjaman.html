@@ -34,7 +34,7 @@
     <div class="main">
 
         <header class="topbar">
-            <span class="crumb">Area Kerja / Peminjaman</span>
+            <span class="crumb">Workspace / Peminjaman</span>
 
             <div class="user">
                 <div class="notif">
@@ -215,7 +215,7 @@
                             <th>JATUH TEMPO</th>
                             <th>TANGGAL KEMBALI</th>
                             <th>STATUS</th>
-                            <th>AKSI</th>
+                            <th>UBAH</th>
                         </tr>
                     </thead>
                     <tbody id="loanBody">
@@ -348,7 +348,154 @@
         </main>
     </div>
 
+    <div class="modal-overlay" id="loanModal">
+        <div class="modal modal-md" role="dialog" aria-modal="true" aria-labelledby="loanTitle">
+            <form method="POST" action="#" id="loanForm">
+
+                <div class="modal-head">
+                    <div class="modal-icon"><i data-lucide="book-plus"></i></div>
+                    <div class="modal-title">
+                        <h2 id="loanTitle">Tambah Peminjaman</h2>
+                        <p>Catat transaksi peminjaman baru.</p>
+                    </div>
+                    <button type="button" class="modal-close" data-close aria-label="Tutup">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="lId">ID Transaksi</label>
+                            <input type="text" id="lId" value="Dibuat otomatis" readonly class="readonly">
+                        </div>
+                        <div class="field">
+                            <label for="lStatus">Status</label>
+                            <select id="lStatus" name="status">
+                                <option value="borrowed">Dipinjam</option>
+                                <option value="returned">Dikembalikan</option>
+                                <option value="overdue">Terlambat</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="lPeminjam">Peminjam</label>
+                            <input type="text" id="lPeminjam" name="peminjam" placeholder="Masukkan nama peminjam" required>
+                        </div>
+                        <div class="field">
+                            <label for="lBuku">Judul Buku</label>
+                            <input type="text" id="lBuku" name="judul_buku" placeholder="Masukkan judul buku" required>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="lPinjam">Tanggal Pinjam</label>
+                            <input type="date" id="lPinjam" name="tanggal_pinjam" required>
+                        </div>
+                        <div class="field">
+                            <label for="lTempo">Jatuh Tempo</label>
+                            <input type="date" id="lTempo" name="jatuh_tempo" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="lKembali">Tanggal Kembali</label>
+                        <input type="date" id="lKembali" name="tanggal_kembali">
+                    </div>
+
+                </div>
+
+                <div class="modal-foot">
+                    <button type="button" class="btn-outline" data-close>Batal</button>
+                    <button type="submit" class="btn-primary">
+                        <i data-lucide="plus"></i>
+                        Tambah Peminjaman
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="editLoanModal">
+        <div class="modal modal-md" role="dialog" aria-modal="true" aria-labelledby="editLoanTitle">
+            <form method="POST" action="#" id="editLoanForm">
+
+                <div class="modal-head">
+                    <div class="modal-icon"><i data-lucide="pencil"></i></div>
+                    <div class="modal-title">
+                        <h2 id="editLoanTitle">Ubah Peminjaman</h2>
+                        <p id="editLoanSub">PN-0000 &bull; Nama peminjam</p>
+                    </div>
+                    <button type="button" class="modal-close" data-close aria-label="Tutup">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="elId">ID Transaksi</label>
+                            <input type="text" id="elId" name="id_transaksi" readonly class="readonly">
+                        </div>
+                        <div class="field">
+                            <label for="elStatus">Status</label>
+                            <select id="elStatus" name="status">
+                                <option value="borrowed">Dipinjam</option>
+                                <option value="returned">Dikembalikan</option>
+                                <option value="overdue">Terlambat</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="elPeminjam">Peminjam</label>
+                            <input type="text" id="elPeminjam" name="peminjam" required>
+                        </div>
+                        <div class="field">
+                            <label for="elBuku">Judul Buku</label>
+                            <input type="text" id="elBuku" name="judul_buku" required>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="elPinjam">Tanggal Pinjam</label>
+                            <input type="date" id="elPinjam" name="tanggal_pinjam" required>
+                        </div>
+                        <div class="field">
+                            <label for="elTempo">Jatuh Tempo</label>
+                            <input type="date" id="elTempo" name="jatuh_tempo" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="elKembali">Tanggal Kembali</label>
+                        <input type="date" id="elKembali" name="tanggal_kembali">
+                    </div>
+
+                </div>
+
+                <div class="modal-foot">
+                    <button type="button" class="btn-outline" data-close>Batal</button>
+                    <button type="submit" class="btn-primary">
+                        <i data-lucide="check"></i>
+                        Simpan Perubahan
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
     <script src="js/notifikasi.js"></script>
-    <script>lucide.createIcons();</script>
+    <script src="js/peminjaman.js"></script>
+    <script src="js/transisi.js"></script>
 </body>
 </html>

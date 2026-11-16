@@ -438,3 +438,8 @@
 .btn-danger:hover {
     background: #991b1b;
 }
+
+#editModal .field input,
+#editModal .field select {
+    padding: 13px 14px;
+}
